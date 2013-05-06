@@ -1,0 +1,80 @@
+2013-05-05 19:16:42,362 - [INFO] - from play in main 
+Listening for HTTP on /0.0.0.0:8080
+
+2013-05-05 19:17:37,007 - [DEBUG] - from application in New I/O  worker #1 
+** onStart **
+
+2013-05-05 19:17:37,511 - [DEBUG] - from application in New I/O  worker #1 
+** Morphia datastore: dev
+
+2013-05-05 19:17:37,520 - [INFO] - from play in New I/O  worker #1 
+Application started (Dev)
+
+2013-05-05 19:18:27,019 - [ERROR] - from application in play-internal-execution-context-1 
+
+
+! @6e7j7npkd - Internal server error, for (POST) [/register] ->
+
+play.api.Application$$anon$1: Execution exception[[Network: can't say something]]
+	at play.api.Application$class.handleError(Application.scala:289) ~[play_2.10.jar:2.1.0]
+	at play.api.DefaultApplication.handleError(Application.scala:383) [play_2.10.jar:2.1.0]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anon$2$$anonfun$handle$1.apply(PlayDefaultUpstreamHandler.scala:132) [play_2.10.jar:2.1.0]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anon$2$$anonfun$handle$1.apply(PlayDefaultUpstreamHandler.scala:128) [play_2.10.jar:2.1.0]
+	at play.api.libs.concurrent.PlayPromise$$anonfun$extend1$1.apply(Promise.scala:113) [play_2.10.jar:2.1.0]
+	at play.api.libs.concurrent.PlayPromise$$anonfun$extend1$1.apply(Promise.scala:113) [play_2.10.jar:2.1.0]
+	at play.api.libs.concurrent.PlayPromise$$anonfun$extend$1$$anonfun$apply$1.apply(Promise.scala:104) [play_2.10.jar:2.1.0]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) [scala-library.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) [scala-library.jar:na]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895) [na:1.6.0_43]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918) [na:1.6.0_43]
+	at java.lang.Thread.run(Thread.java:680) [na:1.6.0_43]
+com.mongodb.MongoException$Network: can't say something
+	at com.mongodb.DBTCPConnector.say(DBTCPConnector.java:194) ~[mongo-java-driver-2.10.1.jar:na]
+	at com.mongodb.DBTCPConnector.say(DBTCPConnector.java:155) ~[mongo-java-driver-2.10.1.jar:na]
+	at com.mongodb.DBApiLayer$MyCollection.insert(DBApiLayer.java:270) ~[mongo-java-driver-2.10.1.jar:na]
+	at com.mongodb.DBApiLayer$MyCollection.insert(DBApiLayer.java:226) ~[mongo-java-driver-2.10.1.jar:na]
+	at com.mongodb.DBCollection.insert(DBCollection.java:147) ~[mongo-java-driver-2.10.1.jar:na]
+	at com.mongodb.DBCollection.insert(DBCollection.java:90) ~[mongo-java-driver-2.10.1.jar:na]
+	at com.mongodb.DBCollection.save(DBCollection.java:809) ~[mongo-java-driver-2.10.1.jar:na]
+	at com.google.code.morphia.DatastoreImpl.save(DatastoreImpl.java:731) ~[morphia-0.99.jar:na]
+	at com.google.code.morphia.DatastoreImpl.save(DatastoreImpl.java:793) ~[morphia-0.99.jar:na]
+	at com.google.code.morphia.DatastoreImpl.save(DatastoreImpl.java:787) ~[morphia-0.99.jar:na]
+	at models.User.create(User.java:57) ~[na:na]
+	at controllers.Register.submit(Register.java:56) ~[na:na]
+	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$3$$anonfun$apply$3.apply(routes_routing.scala:97) ~[na:na]
+	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$3$$anonfun$apply$3.apply(routes_routing.scala:97) ~[na:na]
+	at play.core.Router$HandlerInvoker$$anon$6$$anon$2.invocation(Router.scala:141) ~[play_2.10.jar:2.1.0]
+	at play.core.Router$Routes$$anon$1.invocation(Router.scala:322) ~[play_2.10.jar:2.1.0]
+	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:31) ~[play_2.10.jar:2.1.0]
+	at play.GlobalSettings$1.call(GlobalSettings.java:63) ~[play_2.10.jar:2.1.0]
+	at play.mvc.Security$AuthenticatedAction.call(Security.java:39) ~[play_2.10.jar:2.1.0]
+	at play.core.j.JavaAction$$anon$2.apply(JavaAction.scala:74) ~[play_2.10.jar:2.1.0]
+	at play.core.j.JavaAction$$anon$2.apply(JavaAction.scala:73) ~[play_2.10.jar:2.1.0]
+	at play.libs.F$Promise$PromiseActor.onReceive(F.java:420) ~[play_2.10.jar:2.1.0]
+	at akka.actor.UntypedActor$$anonfun$receive$1.applyOrElse(UntypedActor.scala:159) ~[akka-actor_2.10.jar:na]
+	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:425) ~[akka-actor_2.10.jar:na]
+	at akka.actor.ActorCell.invoke(ActorCell.scala:386) ~[akka-actor_2.10.jar:na]
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:230) ~[akka-actor_2.10.jar:na]
+	at akka.dispatch.Mailbox.run(Mailbox.scala:212) ~[akka-actor_2.10.jar:na]
+	at akka.dispatch.ForkJoinExecutorConfigurator$MailboxExecutionTask.exec(AbstractDispatcher.scala:502) ~[akka-actor_2.10.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:262) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:975) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1478) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:104) ~[scala-library.jar:na]
+Caused by: java.io.IOException: couldn't connect to [/127.0.0.1:27017] bc:java.net.ConnectException: Connection refused
+	at com.mongodb.DBPort._open(DBPort.java:214) ~[mongo-java-driver-2.10.1.jar:na]
+	at com.mongodb.DBPort.go(DBPort.java:107) ~[mongo-java-driver-2.10.1.jar:na]
+	at com.mongodb.DBPort.go(DBPort.java:84) ~[mongo-java-driver-2.10.1.jar:na]
+	at com.mongodb.DBPort.say(DBPort.java:79) ~[mongo-java-driver-2.10.1.jar:na]
+	at com.mongodb.DBTCPConnector.say(DBTCPConnector.java:181) ~[mongo-java-driver-2.10.1.jar:na]
+	... 31 common frames omitted
+
+2013-05-05 19:21:17,241 - [DEBUG] - from application in New I/O  worker #1 
+** onStart **
+
+2013-05-05 19:21:17,247 - [DEBUG] - from application in New I/O  worker #1 
+** Morphia datastore: dev
+
+2013-05-05 19:21:17,247 - [INFO] - from play in New I/O  worker #1 
+Application started (Dev)
+

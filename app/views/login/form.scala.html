@@ -1,0 +1,41 @@
+@(loginForm: Form[Login.LoginForm])
+
+@import helper._
+@import helper.twitterBootstrap._
+
+@main("Login"){
+	@navpublic("") {
+		@helper.form(action = routes.Login.submit) {
+    		<div class="container">
+				<form class="form-signin">
+					<fieldset> 
+						<legend class="form-signing-heading"> Please sign in </legend>        
+			            
+					        @inputText(
+	                            loginForm("email"), 
+	                            '_label -> "Email address", 
+	                            '_help -> "Enter your email address.",
+	                            '_error -> loginForm.globalError
+	                        )
+	                        
+	                        @inputPassword(
+	                            loginForm("password"), 
+	                            '_label -> "Password",
+	                            '_help -> "Enter your password."
+	                        )
+
+					        <label class="checkbox"> 
+								<input type="checkbox" value="remember-me"> 
+								Remember me
+							</label>
+					        
+					</fieldset>
+	                <div class="actions">
+                        <input type="submit" class="btn btn-primary" value="Sign In">
+                        <a href="@routes.Application.index" class="btn">Cancel</a>
+                    </div>
+		      	</form>
+			</div>
+		}
+	}
+}

@@ -1,0 +1,29 @@
+@(user: User)
+
+@main("Success") {
+    
+    @navprivate("PrivateNav") {
+    <div class="container"> 
+        <h3>Registration complete:</h3>
+        
+        <h6>Username</h6>
+        
+        <p>
+            @user.username
+        </p>
+        
+        <h6>Email</h6>
+        
+        <p>
+            @user.email
+        </p>
+        
+        <h6>Password</h6>
+        
+        <p>
+            @user.password
+        </p>
+    </div>
+    }
+    
+}

@@ -1,0 +1,59 @@
+@(registerForm: Form[User])
+
+@import helper._
+@import helper.twitterBootstrap._
+
+@main("Registration Form") {
+    @navprivate("Private Nav") {
+        @helper.form(action = routes.Register.submit) {
+            <div class="container">
+                <form class="form-register">
+                    <fieldset>
+                        <legend class="form-signing-heading">Registration Form</legend>
+                        
+                        @inputText(
+                            registerForm("username"), 
+                            '_label -> "Username", 
+                            '_help -> "Please choose a valid username.",
+                            '_error -> registerForm.globalError
+                        )
+                        
+                        @inputText(
+                            registerForm("email"), '_label -> "Email",
+                            '_help -> "Enter a valid email address."
+                        )
+                        
+                        @inputPassword(
+                            registerForm("password"), 
+                            '_label -> "Password",
+                            '_help -> "A password must be at least 6 characters. "
+                        )
+                        
+                        @inputPassword(
+                            registerForm("repeatPassword"), 
+                            '_label -> "Repeat password",
+                            '_help -> "Please repeat your password again.",
+                            '_error -> registerForm.error("password")
+                        )
+                        
+                    </fieldset>
+                    
+                    <fieldset>
+                        
+                        @checkbox(
+                            registerForm("accept"), 
+                            '_label -> None, '_text -> "You agree the Terms and conditions",
+                            '_showConstraints -> false
+                        )
+                        
+                    </fieldset>
+                    
+                    <div class="actions">
+                        <input type="submit" class="btn btn-primary" value="Sign Up">
+                        <a href="@routes.Application.index" class="btn">Cancel</a>
+                    </div>
+                </form>
+            </div>      
+        }
+    }
+}
