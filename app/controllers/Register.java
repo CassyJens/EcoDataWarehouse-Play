@@ -42,10 +42,17 @@ public class Register extends Controller {
             }
         }
         
-        // Check if the username is valid
+        // Check if the username and email are valid
         if(!filledForm.hasErrors()) {
-            if(filledForm.get().username.equals("admin") || filledForm.get().username.equals("guest")) {
+            
+            String un = filledForm.get().username;
+            if(un.equals("admin") || un.equals("guest")) {
                 filledForm.reject("username", "This username is already taken");
+            }
+
+            String email = filledForm.get().email;
+            if(User.emailExists(email)){
+                filledForm.reject("email", "There is already an account associated with this email address.");
             }
         }
         

@@ -1,0 +1,26 @@
+Changing a mongodb object
+-------------------------
+To add a member to a mongodb object, simply update the Play db model or update the mongodb
+object directly. Existing mongodb objects will need to be updated using
+db.<collection>.update()
+
+For example, after creating multiple users I decided to include a status which would represent
+the active/inactive state of a user. I will also want to add a permission level in the future.
+To do so, I modified the application to begin storing this data type with the mongodb object. 
+I also updated existing users with the following query in the terminal.
+
+ db.User.update({className: "models.User"},{$set: {status: 1}}, {multi: true})
+
+ Running Mongodb and Mongo
+ -------------------------
+ Install mongodb. 
+ While in development, to run the Mongodb access the terminal and type
+ mongodb. This will run the mongo db database. To access mongo via the commandline
+ and view and manipulate database items, type mongo on the command line, in a different
+ tab.
+
+ > mongodb
+ [launches the mongo database so it's available for your application]
+
+ > mongo
+ [access mongo via the shell]

@@ -12,11 +12,13 @@ import org.bson.types.ObjectId;
 
 import com.google.code.morphia.annotations.Entity;
 import com.google.code.morphia.annotations.Id;
+import com.google.code.morphia.Morphia;
+import com.google.code.morphia.query.Query;
+import com.google.code.morphia.query.QueryImpl;
 
 import controllers.MorphiaObject;
 
-@Entity
-public class User {
+@Entity public class User {
 
     public interface All {}
     public interface Step1{}    
@@ -34,6 +36,11 @@ public class User {
     @MinLength(value = 6, groups = {All.class, Step1.class})
     public String password;
 
+    private int status = 1;
+
+    @Id
+    public ObjectId id;
+
     public User(){}
 
 	public User(String username, String email, String password){
@@ -46,15 +53,32 @@ public class User {
      * Authenticate a User.
      */
     public static User authenticate(String email, String password) {
-        // return find.where()
-        //     .eq("email", email)
-        //     .eq("password", password)
-        //     .findUnique();
-        return new User("cassyjens", "jens.cass@gmail.com", "password");
+
+        if(MorphiaObject.datastore != null) {
+            Query q = MorphiaObject.datastore.createQuery(User.class).filter(
+                "email", email).filter(
+                "password", password);
+            User user = (User) q.get();
+            return user;
+        }
+        return null;
     }
 
+    /** 
+     * Insert a user.
+     */
     public static void create(User user) {
         MorphiaObject.datastore.save(user);
+    }
+
+    /** 
+     * Check if email exits in system.
+     * Insensitive to status. 
+     */
+    public static boolean emailExists(String email) {
+        User user = MorphiaObject.datastore.find(User.class, "email", email).get();
+        if(user != null) return true;
+        else return false;
     }
 
 }
