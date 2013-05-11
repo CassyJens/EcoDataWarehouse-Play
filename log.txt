@@ -24,3 +24,8 @@ I also updated existing users with the following query in the terminal.
 
  > mongo
  [access mongo via the shell]
+
+Helpful Docs
+-----------
+DB: MongoDB
+http://docs.mongodb.org

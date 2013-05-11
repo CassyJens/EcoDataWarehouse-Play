@@ -17,16 +17,26 @@ public class FileManagement extends Controller {
     }    
 
 
-	// TODO BELOW
+	/* FILE UPLOAD AND DOWNLOAD CONTROLLER ACTIONS */
 
-    /* Invoked when the user wants to get a file? */
-    public static Result file(Long id)  {
-    	return ok(index.render("file"));
-	}
+    /* Presents the form for uploading a file */
+    public static Result blankUpload(){
+        return ok(views.html.file.upload.form.render());
+    }
 
-    /* Invoked when the user wants to save a file */
-	public static Result createFile() {
-		return ok(index.render("createFile"));
-	}
+    /* Presents the upload form to the server */
+    public static Result submitUpload() {
+        return blankUpload();
+    }
+
+    /* Presents the form for downloading a file */
+    public static Result blankDownload() {
+        return ok(views.html.file.download.form.render());
+    }
+
+    /* Passes the download form information to the server */
+    public static Result submitDownload() {
+        return blankDownload();
+    }
 
 }

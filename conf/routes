@@ -15,11 +15,11 @@ POST    /login                      controllers.Login.submit()
 GET 	/logout						controllers.Login.logout()
 
 # File management
-GET 	/file/{id}					controllers.FileManagement.file(id: Long)
-POST	/file/						controllers.FileManagement.createFile()
-
-# File management
 GET 	/filemanagement				controllers.FileManagement.filemanagement()
+GET		/filemanagement/upload		controllers.FileManagement.blankUpload()
+POST 	/filemanagement/upload 		controllers.FileManagement.submitUpload()
+GET		/filemanagement/download	controllers.FileManagement.blankDownload()
+POST 	/filemanagement/download 	controllers.FileManagement.submitDownload()
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)
