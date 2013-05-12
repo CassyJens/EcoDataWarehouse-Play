@@ -9,10 +9,15 @@ import views.html.register.*;
 
 import models.*;
 
+/**
+ * New User Registration
+ */
 @Security.Authenticated(Secure.class)
 public class Register extends Controller {
 
-    /* Defines a form wrapping the user class */
+    /**
+     *  Defines a form wrapping the user class.
+     */
     final static Form<User> signupForm = form(User.class, User.All.class);
   
     /**
@@ -22,7 +27,7 @@ public class Register extends Controller {
         return ok(form.render(signupForm));
     }
 
-    /* 
+    /** 
      *	Validates fields from the registration form
      * 	and either creates a new user or 
      *  communicates any validation errors.
@@ -46,16 +51,22 @@ public class Register extends Controller {
         if(!filledForm.hasErrors()) {
             
             String un = filledForm.get().username;
+            String email = filledForm.get().email;
+
             if(un.equals("admin") || un.equals("guest")) {
                 filledForm.reject("username", "This username is already taken");
             }
-
-            String email = filledForm.get().email;
-            if(User.emailExists(email)){
+            
+            try {
+                User.getUser(email);
                 filledForm.reject("email", "There is already an account associated with this email address.");
+            }
+            catch(Exception e) {
+                // continue - the user does not exist
             }
         }
         
+        // Return validation results to user or save user
         if(filledForm.hasErrors()) {
             return badRequest(form.render(filledForm));
         } else {

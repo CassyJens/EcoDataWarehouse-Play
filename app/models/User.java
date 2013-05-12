@@ -71,14 +71,13 @@ import controllers.MorphiaObject;
         MorphiaObject.datastore.save(user);
     }
 
-    /** 
-     * Check if email exits in system.
-     * Insensitive to status. 
+    /**
+     * Returns a user id
      */
-    public static boolean emailExists(String email) {
+    public static User getUser(String email) throws Exception {
         User user = MorphiaObject.datastore.find(User.class, "email", email).get();
-        if(user != null) return true;
-        else return false;
+        if(user != null) return user;
+        else throw new Exception("User " + email + " does not exist");
     }
 
 }

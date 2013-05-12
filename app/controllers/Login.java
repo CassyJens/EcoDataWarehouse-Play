@@ -11,6 +11,11 @@ import models.*;
 import javax.validation.*;
 import play.data.validation.Constraints.*;
 
+/**
+ * Login controller
+ * Provides login form, validation, and session
+ * management.
+ */
 public class Login extends Controller {
 
     public static class LoginForm {

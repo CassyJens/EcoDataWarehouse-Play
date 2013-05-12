@@ -13,7 +13,6 @@ import java.io.FileNotFoundException;
 import java.io.InputStream;
 
 import com.mongodb.Mongo;
-
 import com.mongodb.DB;
 import com.mongodb.DBCollection;
 import com.mongodb.DBCursor;
@@ -26,7 +25,7 @@ import com.mongodb.gridfs.GridFSInputFile;
 import org.bson.types.ObjectId;
 
 /**
- * Manage projects related operations.
+ * Manage file operations.
  */
 @Security.Authenticated(Secure.class)
 public class FileManagement extends Controller {
@@ -34,9 +33,6 @@ public class FileManagement extends Controller {
     public static Result filemanagement() {
         return ok(filemanagement.render("file management"));
     }    
-
-
-	/* FILE UPLOAD AND DOWNLOAD CONTROLLER ACTIONS */
 
     /* Presents the form for uploading a file */
     public static Result blankUpload(){
@@ -51,70 +47,75 @@ public class FileManagement extends Controller {
         File file;
         EcoFile ecoFile;
         GridFS myFS;
-        GridFSInputFile saveMe;
-        
+        GridFSInputFile gridFSFile;
         MultipartFormData body = request().body().asMultipartFormData();
         FilePart fp = body.getFile("file");
-      
-        // TODO get the MIME type
 
-      if (fp!= null) {
+        if (fp!= null) {
 
-        fileName = fp.getFilename();
-        Logger.debug(String.format("upload: fileName = [%s]", fileName));
+            try {
 
-        contentType = fp.getContentType(); 
-        Logger.debug(String.format("upload: contentType = [%s]", contentType));
+                myFS = MorphiaObject.gridFS;
+                file = fp.getFile();
+                ecoFile = new EcoFile(fp, session().get("email"));
+                gridFSFile = myFS.createFile(file);
+                gridFSFile.save(); // must be called to close stream
+                
+                Logger.debug(String.format("upload: saved file id = [%s]", gridFSFile.get("_id").toString()));
+                
+                ecoFile.save((ObjectId)gridFSFile.get("_id"));
+                return ok(views.html.file.download.summary.render());
+            
+            }
+            catch(Exception e){
+            
+                return redirect("/filemanagement/upload");
+            
+            }
 
-        file = fp.getFile();
-        ecoFile = new EcoFile(file);
-
-        // returns default GridFS bucket (i.e. "fs" collection)
-        myFS = MorphiaObject.gridFS;
-
-        try {
-            // saves the file to "fs" GridFS bucket
-            saveMe = myFS.createFile(file);
+        } else {
+            flash("error", "Missing file");
+            return redirect("/filemanagement/upload");    
         }
-        catch(Exception e){
-            return redirect("/filemanagement/upload");
-        }
-
-        saveMe.save(); // must be called to close stream
-        Logger.debug(String.format("upload: saved file id = [%s]", saveMe.get("_id").toString()));
-
-        // Store a refere
-        ecoFile.save((ObjectId)saveMe.get("_id"), fileName);
-
-        return ok(views.html.file.download.summary.render());
-
-      } else {
-        flash("error", "Missing file");
-        return redirect("/filemanagement/upload");    
-      }
     }
 
-    /* Presents the form for downloading a file */
+    /**
+     * Presents the form for downloading a file
+     */
     public static Result blankDownload() {
         return ok(views.html.file.download.form.render());
     }
 
-    /* Passes the download form information to the server */
+    /**
+     * Passes the download form information to the server 
+     */
     public static Result submitDownload() {
         return blankDownload();
     }
 
+    /**
+     * Returns an okay response with the file download
+     */ 
     public static Result streamFile(String objectId){
         
+        ObjectId id;
+        InputStream is;
+        EcoFile ecoFile;
+
         try {
-            ObjectId id = new ObjectId(objectId);
-            InputStream is = EcoFile.retrieve(id);
-            response().setContentType("application/json");
+
+            // get dependencies 
+            id = new ObjectId(objectId);
+            ecoFile = EcoFile.getEcoFile(id);
+            is = EcoFile.retrieveInputStream(id);
+
+            // set response
+            response().setContentType(ecoFile.type);
             response().setHeader(
                 "Content-Disposition",
                 String.format(
                     "attachment; filename=%s",
-                    "your-properly-named-file.json" // TODO: this better
+                    ecoFile.name
                 )
             );
             return ok(is);

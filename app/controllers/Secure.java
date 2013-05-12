@@ -6,6 +6,9 @@ import play.mvc.Http.*;
 
 import models.*;
 
+/**
+ * Override methods for application security 
+ */
 public class Secure extends Security.Authenticator {
 
 	// Returns email address that is stored in session
@@ -14,7 +17,6 @@ public class Secure extends Security.Authenticator {
         return ctx.session().get("email");
     }
     
-    // 
     @Override
     public Result onUnauthorized(Context ctx) {
         return redirect(routes.Login.blank());

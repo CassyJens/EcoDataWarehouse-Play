@@ -6,6 +6,9 @@ import play.mvc.*;
 import views.html.*;
 import models.*;
 
+/**
+ * Renders public access
+ */
 public class Application extends Controller {
   
     /* The landing page for EcoWarehouse */
