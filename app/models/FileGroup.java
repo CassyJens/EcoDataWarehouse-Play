@@ -22,8 +22,8 @@ import controllers.MorphiaObject;
 
     @Id public ObjectId id;
 	List<FileGroup> fileGroups;
-	List<File> files;
-	//List<Permissions> permissions; // read write
+	List<EcoFile> files;
+	List<Permission> permissions; // read write
 	User owner;
 	Date lastModified;
 	Date dateUploaded;

@@ -1,5 +1,16 @@
-@main("Registration Form") {
+@main("File Upload Form") {
     @navprivate("Private Nav") {
-    	<h3> TODO upload form here </h3>
+		@helper.form(action = routes.FileManagement.submitUpload, 'enctype -> "multipart/form-data") {
+		    
+		    <div class="container">
+
+		    	<input type="file" name="file">
+		    
+		    	<p>
+		    	    <input type="submit">
+		    	</p>
+    
+    		</div>
+		}
 	}
 }
