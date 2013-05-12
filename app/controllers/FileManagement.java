@@ -11,6 +11,7 @@ import models.*;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
+import java.util.List;
 
 import com.mongodb.Mongo;
 import com.mongodb.DB;
@@ -30,16 +31,23 @@ import org.bson.types.ObjectId;
 @Security.Authenticated(Secure.class)
 public class FileManagement extends Controller {
 
+    /**
+     * Landing page
+     */
     public static Result filemanagement() {
         return ok(filemanagement.render("file management"));
     }    
 
-    /* Presents the form for uploading a file */
+    /**
+     * Presents the form for uploading a file 
+     */
     public static Result blankUpload(){
         return ok(views.html.file.upload.form.render());
     }
 
-    /* Submits the upload form data to the server */
+    /** 
+     * Submits the upload form data to the server 
+     */
     public static Result submitUpload() {
 
         String fileName = "";
@@ -49,34 +57,30 @@ public class FileManagement extends Controller {
         GridFS myFS;
         GridFSInputFile gridFSFile;
         MultipartFormData body = request().body().asMultipartFormData();
-        FilePart fp = body.getFile("file");
-
-        if (fp!= null) {
-
-            try {
-
-                myFS = MorphiaObject.gridFS;
-                file = fp.getFile();
-                ecoFile = new EcoFile(fp, session().get("email"));
-                gridFSFile = myFS.createFile(file);
-                gridFSFile.save(); // must be called to close stream
-                
-                Logger.debug(String.format("upload: saved file id = [%s]", gridFSFile.get("_id").toString()));
-                
-                ecoFile.save((ObjectId)gridFSFile.get("_id"));
-                return ok(views.html.file.download.summary.render());
-            
+        final List<FilePart> fileList = body.getFiles(); 
+        
+        for(FilePart fp : fileList) {
+            if (fp!= null) {
+                try {
+                    myFS = MorphiaObject.gridFS;
+                    file = fp.getFile();
+                    ecoFile = new EcoFile(fp, session().get("email"));
+                    gridFSFile = myFS.createFile(file);
+                    gridFSFile.save(); // must be called to close stream
+                    Logger.debug(String.format("upload: saved file id = [%s]", gridFSFile.get("_id").toString()));
+                    ecoFile.save((ObjectId)gridFSFile.get("_id"));
+                }
+                catch(Exception e){
+                    return redirect("/filemanagement/upload");
+                }
+            } 
+            else {
+                flash("error", "Missing file");
+                return redirect("/filemanagement/upload");    
             }
-            catch(Exception e){
-            
-                return redirect("/filemanagement/upload");
-            
-            }
-
-        } else {
-            flash("error", "Missing file");
-            return redirect("/filemanagement/upload");    
         }
+
+        return ok(views.html.file.download.summary.render());
     }
 
     /**
