@@ -1,42 +1,35 @@
 package models;
-
 import javax.validation.*;
-
 import play.data.validation.Constraints.*;
-
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-
 import org.bson.types.ObjectId;
-
 import com.google.code.morphia.annotations.Entity;
 import com.google.code.morphia.annotations.Id;
 import com.google.code.morphia.Morphia;
 import com.google.code.morphia.query.Query;
 import com.google.code.morphia.query.QueryImpl;
-
 import controllers.MorphiaObject;
+import play.*;
+import play.mvc.*;
+import play.data.*;
 
-@Entity public class User {
+@Entity public class User implements ModelApi<User> {
 
-    public interface All {}
-    public interface Step1{}    
-	public interface Step2{} 
-
-    @Required(groups = {All.class, Step1.class})
-    @MinLength(value = 4, groups = {All.class, Step1.class})
+    @Required
+    @MinLength(value = 4)
     public String username;
     
-    @Required(groups = {All.class, Step1.class})
-    @Email(groups = {All.class, Step1.class})
+    @Required
+    @Email
     public String email;
     
-    @Required(groups = {All.class, Step1.class})
-    @MinLength(value = 6, groups = {All.class, Step1.class})
+    @Required
+    @MinLength(value = 6)
     public String password;
-
-    private int status = 1;
+    public int status = 1;
+    public Status enumStatus = Status.ACTIVE;
 
     @Id
     public ObjectId id;
@@ -54,11 +47,22 @@ import controllers.MorphiaObject;
      */
     public static User authenticate(String email, String password) {
 
-        if(MorphiaObject.datastore != null) {
+        Logger.debug("email: " + email);
+        Logger.debug("password: " + password);
+
+        if( MorphiaObject.datastore != null) {
+
+            Logger.debug("datastore not null");
+
             Query q = MorphiaObject.datastore.createQuery(User.class).filter(
                 "email", email).filter(
                 "password", password);
+
+            Logger.debug("query created");
+            
             User user = (User) q.get();
+            
+            Logger.debug("user is retrieved");
             return user;
         }
         return null;
@@ -67,14 +71,38 @@ import controllers.MorphiaObject;
     /** 
      * Insert a user.
      */
-    public static void create(User user) {
-        MorphiaObject.datastore.save(user);
+    public ObjectId save() {
+        // if exists, update
+        // TODO
+        // else, save new 
+        MorphiaObject.datastore.save(this); // @id is automatically filled in after save
+        return this.id;
     }
 
     /**
-     * Returns a user id
+     * Returns all active users in the system.
      */
-    public static User getUser(String email) throws Exception {
+    public List<User> findAllUsers() {
+        List<User> users = new ArrayList<User>();
+        users = MorphiaObject.datastore.find(User.class, "enumStatus", Status.ACTIVE).asList();
+        return users;
+    }
+
+    /**
+     * Retrieves a user from the database.
+     */
+    public User findById(ObjectId id) throws Exception {
+        User user = MorphiaObject.datastore.find(User.class, "_id", id).get();
+        if(null == user) {
+            throw new Exception("User " + id.toString() + " not found");
+        }
+        else return user;
+    }
+
+    /**
+     * Returns a user given an email.
+     */
+    public static User findByEmail(String email) throws Exception {
         User user = MorphiaObject.datastore.find(User.class, "email", email).get();
         if(user != null) return user;
         else throw new Exception("User " + email + " does not exist");

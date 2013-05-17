@@ -18,7 +18,7 @@ public class Register extends Controller {
     /**
      *  Defines a form wrapping the user class.
      */
-    final static Form<User> signupForm = form(User.class, User.All.class);
+    final static Form<User> signupForm = form(User.class);
   
     /**
      * Display a blank form.
@@ -58,7 +58,7 @@ public class Register extends Controller {
             }
             
             try {
-                User.getUser(email);
+                User.findByEmail(email);
                 filledForm.reject("email", "There is already an account associated with this email address.");
             }
             catch(Exception e) {
@@ -70,8 +70,8 @@ public class Register extends Controller {
         if(filledForm.hasErrors()) {
             return badRequest(form.render(filledForm));
         } else {
-            User user = filledForm.get();
-            User.create(user);
+            User user = filledForm.get(); /* create an object from a form */
+            user.save();
             return ok(summary.render(user));
         }
     }

@@ -12,6 +12,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.util.List;
+import java.util.ArrayList;
 
 import com.mongodb.Mongo;
 import com.mongodb.DB;
@@ -35,26 +36,27 @@ public class FileManagement extends Controller {
      * Landing page
      */
     public static Result filemanagement() {
-        return ok(filemanagement.render("file management"));
-    }    
+        return ok(filemanagement.render("File Management."));
+    }
 
     /**
-     * Presents the form for uploading a file 
+     * Presents the form for uploading files.
      */
-    public static Result blankUpload(){
-        return ok(views.html.file.upload.form.render());
+    public static Result blankUpload(String status){
+        return ok(views.html.file.upload.form.render(status));
     }
 
     /** 
-     * Submits the upload form data to the server 
+     * Submits the upload form data to the server.
      */
     public static Result submitUpload() {
 
         String fileName = "";
         String contentType = "";
+        String email = "";
         File file;
         EcoFile ecoFile;
-        GridFS myFS;
+        GridFS myFS = MorphiaObject.gridFS;
         GridFSInputFile gridFSFile;
         MultipartFormData body = request().body().asMultipartFormData();
         final List<FilePart> fileList = body.getFiles(); 
@@ -62,39 +64,48 @@ public class FileManagement extends Controller {
         for(FilePart fp : fileList) {
             if (fp!= null) {
                 try {
-                    myFS = MorphiaObject.gridFS;
+                    
+                    /* Create the file and save in GridFS */
                     file = fp.getFile();
-                    ecoFile = new EcoFile(fp, session().get("email"));
                     gridFSFile = myFS.createFile(file);
                     gridFSFile.save(); // must be called to close stream
-                    Logger.debug(String.format("upload: saved file id = [%s]", gridFSFile.get("_id").toString()));
-                    ecoFile.save((ObjectId)gridFSFile.get("_id"));
+                    Logger.debug(String.format("upload: saved GridFS file id = [%s]", gridFSFile.get("_id").toString()));
+                    
+                    /* Create symbolic link to store with EcoFile in DB */
+                    email = session().get("email");
+                    ecoFile = new EcoFile(fp, email, (ObjectId) gridFSFile.get("_id"));
+                    ecoFile.save();
+
                 }
                 catch(Exception e){
-                    return redirect("/filemanagement/upload");
+                    return redirect(routes.FileManagement.blankUpload("An unexpected error occured.")); 
                 }
             } 
             else {
                 flash("error", "Missing file");
-                return redirect("/filemanagement/upload");    
+                return redirect(routes.FileManagement.blankUpload("The file was unable to be retrieved."));    
             }
         }
 
-        return ok(views.html.file.download.summary.render());
+        return ok(views.html.file.upload.form.render("File(s) upload success."));
     }
 
     /**
      * Presents the form for downloading a file
      */
-    public static Result blankDownload() {
-        return ok(views.html.file.download.form.render());
-    }
-
-    /**
-     * Passes the download form information to the server 
-     */
-    public static Result submitDownload() {
-        return blankDownload();
+    public static Result blankDownload(String email, String fileGroup) {
+        try {
+            // By default, render files from the user's default file group (email address)
+            List<ObjectId> fileIds = FileGroup.findByEmail(session().get("email")).fileIds;
+            List<EcoFile> files = new ArrayList<EcoFile>();
+            for(ObjectId id : fileIds) {
+                files.add(new EcoFile().findById(id));
+            }
+            return ok(views.html.file.download.form.render(files));            
+        }
+        catch(Exception e) {
+            return ok(views.html.file.download.form.render(new ArrayList<EcoFile>()));
+        }
     }
 
     /**
@@ -107,10 +118,9 @@ public class FileManagement extends Controller {
         EcoFile ecoFile;
 
         try {
-
             // get dependencies 
             id = new ObjectId(objectId);
-            ecoFile = EcoFile.getEcoFile(id);
+            ecoFile = new EcoFile().findById(id);
             is = EcoFile.retrieveInputStream(id);
 
             // set response
@@ -125,7 +135,7 @@ public class FileManagement extends Controller {
             return ok(is);
         }
         catch(FileNotFoundException e){
-            return notFound("The specified file does not exist.");
+            return notFound(e.toString() + " The specified file does not exist.");
         }
         catch(Exception e) {
             return notFound("Oh no!! Something went wrong during your file download.");

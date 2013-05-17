@@ -1,275 +1,616 @@
-2013-05-12 16:32:46,554 - [INFO] - from play in main 
+2013-05-17 11:26:20,211 - [INFO] - from play in main 
 Listening for HTTP on /0.0.0.0:8080
 
-2013-05-12 16:33:15,283 - [ERROR] - from application in New I/O  worker #1 
-
-
-! @6e9h9ig04 - Internal server error, for (GET) [/] ->
-
-sbt.PlayExceptions$CompilationException: Compilation error[')' expected]
-	at sbt.PlayReloader$$anon$2$$anonfun$reload$2$$anonfun$apply$15$$anonfun$apply$16.apply(PlayReloader.scala:349) ~[na:na]
-	at sbt.PlayReloader$$anon$2$$anonfun$reload$2$$anonfun$apply$15$$anonfun$apply$16.apply(PlayReloader.scala:349) ~[na:na]
-	at scala.Option.map(Option.scala:133) ~[scala-library.jar:na]
-	at sbt.PlayReloader$$anon$2$$anonfun$reload$2$$anonfun$apply$15.apply(PlayReloader.scala:349) ~[na:na]
-	at sbt.PlayReloader$$anon$2$$anonfun$reload$2$$anonfun$apply$15.apply(PlayReloader.scala:346) ~[na:na]
-	at scala.Option.map(Option.scala:133) ~[scala-library.jar:na]
-	at sbt.PlayReloader$$anon$2$$anonfun$reload$2.apply(PlayReloader.scala:346) ~[na:na]
-	at sbt.PlayReloader$$anon$2$$anonfun$reload$2.apply(PlayReloader.scala:344) ~[na:na]
-	at scala.Either$LeftProjection.map(Either.scala:374) ~[na:na]
-	at sbt.PlayReloader$$anon$2.reload(PlayReloader.scala:344) ~[na:na]
-	at play.core.ReloadableApplication.get(ApplicationProvider.scala:98) ~[play_2.10.jar:2.1.0]
-	at play.core.server.Server$class.sendHandler$1(Server.scala:56) [play_2.10.jar:2.1.0]
-	at play.core.server.Server$$anonfun$getHandlerFor$4.apply(Server.scala:88) [play_2.10.jar:2.1.0]
-	at play.core.server.Server$$anonfun$getHandlerFor$4.apply(Server.scala:87) [play_2.10.jar:2.1.0]
-	at scala.util.Either$RightProjection.flatMap(Either.scala:523) [scala-library.jar:na]
-	at play.core.server.Server$class.getHandlerFor(Server.scala:87) [play_2.10.jar:2.1.0]
-	at play.core.server.NettyServer.getHandlerFor(NettyServer.scala:34) [play_2.10.jar:2.1.0]
-	at play.core.server.netty.PlayDefaultUpstreamHandler.messageReceived(PlayDefaultUpstreamHandler.scala:103) [play_2.10.jar:2.1.0]
-	at org.jboss.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:75) [netty.jar:na]
-	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:565) [netty.jar:na]
-	at org.jboss.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:793) [netty.jar:na]
-	at org.jboss.netty.handler.codec.http.HttpContentDecoder.messageReceived(HttpContentDecoder.java:104) [netty.jar:na]
-	at org.jboss.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:75) [netty.jar:na]
-	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:565) [netty.jar:na]
-	at org.jboss.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:793) [netty.jar:na]
-	at org.jboss.netty.channel.Channels.fireMessageReceived(Channels.java:296) [netty.jar:na]
-	at org.jboss.netty.handler.codec.frame.FrameDecoder.unfoldAndFireMessageReceived(FrameDecoder.java:455) [netty.jar:na]
-	at org.jboss.netty.handler.codec.replay.ReplayingDecoder.callDecode(ReplayingDecoder.java:538) [netty.jar:na]
-	at org.jboss.netty.handler.codec.replay.ReplayingDecoder.messageReceived(ReplayingDecoder.java:437) [netty.jar:na]
-	at org.jboss.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:75) [netty.jar:na]
-	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:565) [netty.jar:na]
-	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:560) [netty.jar:na]
-	at org.jboss.netty.channel.Channels.fireMessageReceived(Channels.java:268) [netty.jar:na]
-	at org.jboss.netty.channel.Channels.fireMessageReceived(Channels.java:255) [netty.jar:na]
-	at org.jboss.netty.channel.socket.nio.NioWorker.read(NioWorker.java:84) [netty.jar:na]
-	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.processSelectedKeys(AbstractNioWorker.java:472) [netty.jar:na]
-	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.run(AbstractNioWorker.java:333) [netty.jar:na]
-	at org.jboss.netty.channel.socket.nio.NioWorker.run(NioWorker.java:35) [netty.jar:na]
-	at org.jboss.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:102) [netty.jar:na]
-	at org.jboss.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42) [netty.jar:na]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895) [na:1.6.0_43]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918) [na:1.6.0_43]
-	at java.lang.Thread.run(Thread.java:680) [na:1.6.0_43]
-
-2013-05-12 16:33:15,407 - [WARN] - from play in New I/O  worker #1 
-No application found at invoker init
-
-2013-05-12 16:34:02,627 - [ERROR] - from application in New I/O  worker #1 
-
-
-! @6e9h9l81d - Internal server error, for (GET) [/] ->
-
-sbt.PlayExceptions$CompilationException: Compilation error[cannot find symbol [symbol: class List] [location: class controllers.FileManagement]]
-	at sbt.PlayReloader$$anon$2$$anonfun$reload$2$$anonfun$apply$15$$anonfun$apply$16.apply(PlayReloader.scala:349) ~[na:na]
-	at sbt.PlayReloader$$anon$2$$anonfun$reload$2$$anonfun$apply$15$$anonfun$apply$16.apply(PlayReloader.scala:349) ~[na:na]
-	at scala.Option.map(Option.scala:133) ~[scala-library.jar:na]
-	at sbt.PlayReloader$$anon$2$$anonfun$reload$2$$anonfun$apply$15.apply(PlayReloader.scala:349) ~[na:na]
-	at sbt.PlayReloader$$anon$2$$anonfun$reload$2$$anonfun$apply$15.apply(PlayReloader.scala:346) ~[na:na]
-	at scala.Option.map(Option.scala:133) ~[scala-library.jar:na]
-	at sbt.PlayReloader$$anon$2$$anonfun$reload$2.apply(PlayReloader.scala:346) ~[na:na]
-	at sbt.PlayReloader$$anon$2$$anonfun$reload$2.apply(PlayReloader.scala:344) ~[na:na]
-	at scala.Either$LeftProjection.map(Either.scala:374) ~[na:na]
-	at sbt.PlayReloader$$anon$2.reload(PlayReloader.scala:344) ~[na:na]
-	at play.core.ReloadableApplication.get(ApplicationProvider.scala:98) ~[play_2.10.jar:2.1.0]
-	at play.core.server.Server$class.sendHandler$1(Server.scala:56) [play_2.10.jar:2.1.0]
-	at play.core.server.Server$$anonfun$getHandlerFor$4.apply(Server.scala:88) [play_2.10.jar:2.1.0]
-	at play.core.server.Server$$anonfun$getHandlerFor$4.apply(Server.scala:87) [play_2.10.jar:2.1.0]
-	at scala.util.Either$RightProjection.flatMap(Either.scala:523) [scala-library.jar:na]
-	at play.core.server.Server$class.getHandlerFor(Server.scala:87) [play_2.10.jar:2.1.0]
-	at play.core.server.NettyServer.getHandlerFor(NettyServer.scala:34) [play_2.10.jar:2.1.0]
-	at play.core.server.netty.PlayDefaultUpstreamHandler.messageReceived(PlayDefaultUpstreamHandler.scala:103) [play_2.10.jar:2.1.0]
-	at org.jboss.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:75) [netty.jar:na]
-	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:565) [netty.jar:na]
-	at org.jboss.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:793) [netty.jar:na]
-	at org.jboss.netty.handler.codec.http.HttpContentDecoder.messageReceived(HttpContentDecoder.java:104) [netty.jar:na]
-	at org.jboss.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:75) [netty.jar:na]
-	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:565) [netty.jar:na]
-	at org.jboss.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:793) [netty.jar:na]
-	at org.jboss.netty.channel.Channels.fireMessageReceived(Channels.java:296) [netty.jar:na]
-	at org.jboss.netty.handler.codec.frame.FrameDecoder.unfoldAndFireMessageReceived(FrameDecoder.java:455) [netty.jar:na]
-	at org.jboss.netty.handler.codec.replay.ReplayingDecoder.callDecode(ReplayingDecoder.java:538) [netty.jar:na]
-	at org.jboss.netty.handler.codec.replay.ReplayingDecoder.messageReceived(ReplayingDecoder.java:437) [netty.jar:na]
-	at org.jboss.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:75) [netty.jar:na]
-	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:565) [netty.jar:na]
-	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:560) [netty.jar:na]
-	at org.jboss.netty.channel.Channels.fireMessageReceived(Channels.java:268) [netty.jar:na]
-	at org.jboss.netty.channel.Channels.fireMessageReceived(Channels.java:255) [netty.jar:na]
-	at org.jboss.netty.channel.socket.nio.NioWorker.read(NioWorker.java:84) [netty.jar:na]
-	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.processSelectedKeys(AbstractNioWorker.java:472) [netty.jar:na]
-	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.run(AbstractNioWorker.java:333) [netty.jar:na]
-	at org.jboss.netty.channel.socket.nio.NioWorker.run(NioWorker.java:35) [netty.jar:na]
-	at org.jboss.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:102) [netty.jar:na]
-	at org.jboss.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42) [netty.jar:na]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895) [na:1.6.0_43]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918) [na:1.6.0_43]
-	at java.lang.Thread.run(Thread.java:680) [na:1.6.0_43]
-
-2013-05-12 16:34:31,553 - [ERROR] - from application in New I/O  worker #1 
-
-
-! @6e9h9mom1 - Internal server error, for (GET) [/] ->
-
-sbt.PlayExceptions$CompilationException: Compilation error[getFiles() in play.mvc.Http.MultipartFormData cannot be applied to (java.lang.String)]
-	at sbt.PlayReloader$$anon$2$$anonfun$reload$2$$anonfun$apply$15$$anonfun$apply$16.apply(PlayReloader.scala:349) ~[na:na]
-	at sbt.PlayReloader$$anon$2$$anonfun$reload$2$$anonfun$apply$15$$anonfun$apply$16.apply(PlayReloader.scala:349) ~[na:na]
-	at scala.Option.map(Option.scala:133) ~[scala-library.jar:na]
-	at sbt.PlayReloader$$anon$2$$anonfun$reload$2$$anonfun$apply$15.apply(PlayReloader.scala:349) ~[na:na]
-	at sbt.PlayReloader$$anon$2$$anonfun$reload$2$$anonfun$apply$15.apply(PlayReloader.scala:346) ~[na:na]
-	at scala.Option.map(Option.scala:133) ~[scala-library.jar:na]
-	at sbt.PlayReloader$$anon$2$$anonfun$reload$2.apply(PlayReloader.scala:346) ~[na:na]
-	at sbt.PlayReloader$$anon$2$$anonfun$reload$2.apply(PlayReloader.scala:344) ~[na:na]
-	at scala.Either$LeftProjection.map(Either.scala:374) ~[na:na]
-	at sbt.PlayReloader$$anon$2.reload(PlayReloader.scala:344) ~[na:na]
-	at play.core.ReloadableApplication.get(ApplicationProvider.scala:98) ~[play_2.10.jar:2.1.0]
-	at play.core.server.Server$class.sendHandler$1(Server.scala:56) [play_2.10.jar:2.1.0]
-	at play.core.server.Server$$anonfun$getHandlerFor$4.apply(Server.scala:88) [play_2.10.jar:2.1.0]
-	at play.core.server.Server$$anonfun$getHandlerFor$4.apply(Server.scala:87) [play_2.10.jar:2.1.0]
-	at scala.util.Either$RightProjection.flatMap(Either.scala:523) [scala-library.jar:na]
-	at play.core.server.Server$class.getHandlerFor(Server.scala:87) [play_2.10.jar:2.1.0]
-	at play.core.server.NettyServer.getHandlerFor(NettyServer.scala:34) [play_2.10.jar:2.1.0]
-	at play.core.server.netty.PlayDefaultUpstreamHandler.messageReceived(PlayDefaultUpstreamHandler.scala:103) [play_2.10.jar:2.1.0]
-	at org.jboss.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:75) [netty.jar:na]
-	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:565) [netty.jar:na]
-	at org.jboss.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:793) [netty.jar:na]
-	at org.jboss.netty.handler.codec.http.HttpContentDecoder.messageReceived(HttpContentDecoder.java:104) [netty.jar:na]
-	at org.jboss.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:75) [netty.jar:na]
-	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:565) [netty.jar:na]
-	at org.jboss.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:793) [netty.jar:na]
-	at org.jboss.netty.channel.Channels.fireMessageReceived(Channels.java:296) [netty.jar:na]
-	at org.jboss.netty.handler.codec.frame.FrameDecoder.unfoldAndFireMessageReceived(FrameDecoder.java:455) [netty.jar:na]
-	at org.jboss.netty.handler.codec.replay.ReplayingDecoder.callDecode(ReplayingDecoder.java:538) [netty.jar:na]
-	at org.jboss.netty.handler.codec.replay.ReplayingDecoder.messageReceived(ReplayingDecoder.java:437) [netty.jar:na]
-	at org.jboss.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:75) [netty.jar:na]
-	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:565) [netty.jar:na]
-	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:560) [netty.jar:na]
-	at org.jboss.netty.channel.Channels.fireMessageReceived(Channels.java:268) [netty.jar:na]
-	at org.jboss.netty.channel.Channels.fireMessageReceived(Channels.java:255) [netty.jar:na]
-	at org.jboss.netty.channel.socket.nio.NioWorker.read(NioWorker.java:84) [netty.jar:na]
-	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.processSelectedKeys(AbstractNioWorker.java:472) [netty.jar:na]
-	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.run(AbstractNioWorker.java:333) [netty.jar:na]
-	at org.jboss.netty.channel.socket.nio.NioWorker.run(NioWorker.java:35) [netty.jar:na]
-	at org.jboss.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:102) [netty.jar:na]
-	at org.jboss.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42) [netty.jar:na]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895) [na:1.6.0_43]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918) [na:1.6.0_43]
-	at java.lang.Thread.run(Thread.java:680) [na:1.6.0_43]
-
-2013-05-12 16:34:53,291 - [ERROR] - from application in New I/O  worker #1 
-
-
-! @6e9h9o4po - Internal server error, for (GET) [/] ->
-
-sbt.PlayExceptions$CompilationException: Compilation error[missing return statement]
-	at sbt.PlayReloader$$anon$2$$anonfun$reload$2$$anonfun$apply$15$$anonfun$apply$16.apply(PlayReloader.scala:349) ~[na:na]
-	at sbt.PlayReloader$$anon$2$$anonfun$reload$2$$anonfun$apply$15$$anonfun$apply$16.apply(PlayReloader.scala:349) ~[na:na]
-	at scala.Option.map(Option.scala:133) ~[scala-library.jar:na]
-	at sbt.PlayReloader$$anon$2$$anonfun$reload$2$$anonfun$apply$15.apply(PlayReloader.scala:349) ~[na:na]
-	at sbt.PlayReloader$$anon$2$$anonfun$reload$2$$anonfun$apply$15.apply(PlayReloader.scala:346) ~[na:na]
-	at scala.Option.map(Option.scala:133) ~[scala-library.jar:na]
-	at sbt.PlayReloader$$anon$2$$anonfun$reload$2.apply(PlayReloader.scala:346) ~[na:na]
-	at sbt.PlayReloader$$anon$2$$anonfun$reload$2.apply(PlayReloader.scala:344) ~[na:na]
-	at scala.Either$LeftProjection.map(Either.scala:374) ~[na:na]
-	at sbt.PlayReloader$$anon$2.reload(PlayReloader.scala:344) ~[na:na]
-	at play.core.ReloadableApplication.get(ApplicationProvider.scala:98) ~[play_2.10.jar:2.1.0]
-	at play.core.server.Server$class.sendHandler$1(Server.scala:56) [play_2.10.jar:2.1.0]
-	at play.core.server.Server$$anonfun$getHandlerFor$4.apply(Server.scala:88) [play_2.10.jar:2.1.0]
-	at play.core.server.Server$$anonfun$getHandlerFor$4.apply(Server.scala:87) [play_2.10.jar:2.1.0]
-	at scala.util.Either$RightProjection.flatMap(Either.scala:523) [scala-library.jar:na]
-	at play.core.server.Server$class.getHandlerFor(Server.scala:87) [play_2.10.jar:2.1.0]
-	at play.core.server.NettyServer.getHandlerFor(NettyServer.scala:34) [play_2.10.jar:2.1.0]
-	at play.core.server.netty.PlayDefaultUpstreamHandler.messageReceived(PlayDefaultUpstreamHandler.scala:103) [play_2.10.jar:2.1.0]
-	at org.jboss.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:75) [netty.jar:na]
-	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:565) [netty.jar:na]
-	at org.jboss.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:793) [netty.jar:na]
-	at org.jboss.netty.handler.codec.http.HttpContentDecoder.messageReceived(HttpContentDecoder.java:104) [netty.jar:na]
-	at org.jboss.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:75) [netty.jar:na]
-	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:565) [netty.jar:na]
-	at org.jboss.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:793) [netty.jar:na]
-	at org.jboss.netty.channel.Channels.fireMessageReceived(Channels.java:296) [netty.jar:na]
-	at org.jboss.netty.handler.codec.frame.FrameDecoder.unfoldAndFireMessageReceived(FrameDecoder.java:455) [netty.jar:na]
-	at org.jboss.netty.handler.codec.replay.ReplayingDecoder.callDecode(ReplayingDecoder.java:538) [netty.jar:na]
-	at org.jboss.netty.handler.codec.replay.ReplayingDecoder.messageReceived(ReplayingDecoder.java:437) [netty.jar:na]
-	at org.jboss.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:75) [netty.jar:na]
-	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:565) [netty.jar:na]
-	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:560) [netty.jar:na]
-	at org.jboss.netty.channel.Channels.fireMessageReceived(Channels.java:268) [netty.jar:na]
-	at org.jboss.netty.channel.Channels.fireMessageReceived(Channels.java:255) [netty.jar:na]
-	at org.jboss.netty.channel.socket.nio.NioWorker.read(NioWorker.java:84) [netty.jar:na]
-	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.processSelectedKeys(AbstractNioWorker.java:472) [netty.jar:na]
-	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.run(AbstractNioWorker.java:333) [netty.jar:na]
-	at org.jboss.netty.channel.socket.nio.NioWorker.run(NioWorker.java:35) [netty.jar:na]
-	at org.jboss.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:102) [netty.jar:na]
-	at org.jboss.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42) [netty.jar:na]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895) [na:1.6.0_43]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918) [na:1.6.0_43]
-	at java.lang.Thread.run(Thread.java:680) [na:1.6.0_43]
-
-2013-05-12 16:35:53,256 - [DEBUG] - from application in New I/O  worker #1 
+2013-05-17 11:26:22,764 - [DEBUG] - from application in New I/O  worker #1 
 ** onStart **
 
-2013-05-12 16:35:53,561 - [DEBUG] - from application in New I/O  worker #1 
+2013-05-17 11:26:23,460 - [DEBUG] - from application in New I/O  worker #1 
 ** Morphia datastore: dev
 
-2013-05-12 16:35:53,568 - [INFO] - from play in New I/O  worker #1 
+2013-05-17 11:26:23,479 - [INFO] - from play in New I/O  worker #1 
 Application started (Dev)
 
-2013-05-12 16:37:09,490 - [DEBUG] - from application in play-akka.actor.default-dispatcher-18 
-upload: fileName = [WhenZombiesAttack.pdf]
+2013-05-17 11:27:02,698 - [DEBUG] - from application in play-akka.actor.default-dispatcher-2 
+in submit
 
-2013-05-12 16:37:09,492 - [DEBUG] - from application in play-akka.actor.default-dispatcher-18 
-upload: contentType = [application/pdf]
+2013-05-17 11:27:02,765 - [DEBUG] - from application in play-akka.actor.default-dispatcher-2 
+in validate
 
-2013-05-12 16:37:09,495 - [DEBUG] - from application in play-akka.actor.default-dispatcher-18 
-save: email = [jens.cass@gmail.com]
+2013-05-17 11:27:02,766 - [DEBUG] - from application in play-akka.actor.default-dispatcher-2 
+email jens.cass@gmail.com
 
-2013-05-12 16:37:09,593 - [DEBUG] - from application in play-akka.actor.default-dispatcher-18 
-upload: saved file id = [51900b851a881ceaf433a9f4]
+2013-05-17 11:27:02,766 - [DEBUG] - from application in play-akka.actor.default-dispatcher-2 
+password password
 
-2013-05-12 16:37:09,603 - [DEBUG] - from application in play-akka.actor.default-dispatcher-18 
-upload: fileName = [MthResearch.log]
+2013-05-17 11:27:02,767 - [DEBUG] - from application in play-akka.actor.default-dispatcher-2 
+email: jens.cass@gmail.com
 
-2013-05-12 16:37:09,604 - [DEBUG] - from application in play-akka.actor.default-dispatcher-18 
+2013-05-17 11:27:02,767 - [DEBUG] - from application in play-akka.actor.default-dispatcher-2 
+password: password
+
+2013-05-17 11:27:02,767 - [DEBUG] - from application in play-akka.actor.default-dispatcher-2 
+datastore not null
+
+2013-05-17 11:27:02,767 - [DEBUG] - from application in play-akka.actor.default-dispatcher-2 
+query created
+
+2013-05-17 11:27:02,770 - [DEBUG] - from application in play-akka.actor.default-dispatcher-2 
+user is retrieved
+
+2013-05-17 11:27:02,771 - [DEBUG] - from application in play-akka.actor.default-dispatcher-2 
+returning null
+
+2013-05-17 11:27:21,536 - [DEBUG] - from application in play-akka.actor.default-dispatcher-13 
+upload: saved GridFS file id = [51965a691a88157765f1e003]
+
+2013-05-17 11:27:21,537 - [DEBUG] - from application in play-akka.actor.default-dispatcher-13 
+upload: fileName = [main.css]
+
+2013-05-17 11:27:21,537 - [DEBUG] - from application in play-akka.actor.default-dispatcher-13 
+upload: contentType = [text/css]
+
+2013-05-17 11:27:21,546 - [DEBUG] - from application in play-akka.actor.default-dispatcher-13 
+upload: email = [jens.cass@gmail.com]
+
+2013-05-17 11:27:21,546 - [DEBUG] - from application in play-akka.actor.default-dispatcher-13 
+eco file created
+
+2013-05-17 11:27:21,554 - [DEBUG] - from application in play-akka.actor.default-dispatcher-13 
+username CassyJens
+
+2013-05-17 11:27:21,554 - [DEBUG] - from application in play-akka.actor.default-dispatcher-13 
+email jens.cass@gmail.com
+
+2013-05-17 11:27:21,554 - [DEBUG] - from application in play-akka.actor.default-dispatcher-13 
+password password
+
+2013-05-17 11:27:21,554 - [DEBUG] - from application in play-akka.actor.default-dispatcher-13 
+status 1
+
+2013-05-17 11:27:21,554 - [DEBUG] - from application in play-akka.actor.default-dispatcher-13 
+enumStatus ACTIVE
+
+2013-05-17 11:27:21,554 - [DEBUG] - from application in play-akka.actor.default-dispatcher-13 
+_id 5195a7ae1a880efec24def3f
+
+2013-05-17 11:27:21,557 - [DEBUG] - from application in play-akka.actor.default-dispatcher-13 
+fg = [null]
+
+2013-05-17 11:27:21,557 - [DEBUG] - from application in play-akka.actor.default-dispatcher-13 
+**********file group by email jens.cass@gmail.comnot found
+
+2013-05-17 11:27:21,561 - [DEBUG] - from application in play-akka.actor.default-dispatcher-13 
+about to update this biz: []
+
+2013-05-17 11:27:23,920 - [DEBUG] - from application in play-akka.actor.default-dispatcher-10 
+username CassyJens
+
+2013-05-17 11:27:23,921 - [DEBUG] - from application in play-akka.actor.default-dispatcher-10 
+email jens.cass@gmail.com
+
+2013-05-17 11:27:23,921 - [DEBUG] - from application in play-akka.actor.default-dispatcher-10 
+password password
+
+2013-05-17 11:27:23,922 - [DEBUG] - from application in play-akka.actor.default-dispatcher-10 
+status 1
+
+2013-05-17 11:27:23,922 - [DEBUG] - from application in play-akka.actor.default-dispatcher-10 
+enumStatus ACTIVE
+
+2013-05-17 11:27:23,922 - [DEBUG] - from application in play-akka.actor.default-dispatcher-10 
+_id 5195a7ae1a880efec24def3f
+
+2013-05-17 11:27:23,924 - [DEBUG] - from application in play-akka.actor.default-dispatcher-10 
+fg = [models.FileGroup@44ffb31f]
+
+2013-05-17 11:28:54,046 - [ERROR] - from application in New I/O  worker #3 
+
+
+! @6eb052ffk - Internal server error, for (GET) [/filemanagement/download] ->
+
+sbt.PlayExceptions$CompilationException: Compilation error[cannot find symbol [symbol: method debug(models.FileGroup)] [location: class play.Logger]]
+	at sbt.PlayReloader$$anon$2$$anonfun$reload$2$$anonfun$apply$15$$anonfun$apply$16.apply(PlayReloader.scala:349) ~[na:na]
+	at sbt.PlayReloader$$anon$2$$anonfun$reload$2$$anonfun$apply$15$$anonfun$apply$16.apply(PlayReloader.scala:349) ~[na:na]
+	at scala.Option.map(Option.scala:133) ~[scala-library.jar:na]
+	at sbt.PlayReloader$$anon$2$$anonfun$reload$2$$anonfun$apply$15.apply(PlayReloader.scala:349) ~[na:na]
+	at sbt.PlayReloader$$anon$2$$anonfun$reload$2$$anonfun$apply$15.apply(PlayReloader.scala:346) ~[na:na]
+	at scala.Option.map(Option.scala:133) ~[scala-library.jar:na]
+	at sbt.PlayReloader$$anon$2$$anonfun$reload$2.apply(PlayReloader.scala:346) ~[na:na]
+	at sbt.PlayReloader$$anon$2$$anonfun$reload$2.apply(PlayReloader.scala:344) ~[na:na]
+	at scala.Either$LeftProjection.map(Either.scala:374) ~[na:na]
+	at sbt.PlayReloader$$anon$2.reload(PlayReloader.scala:344) ~[na:na]
+	at play.core.ReloadableApplication.get(ApplicationProvider.scala:98) ~[play_2.10.jar:2.1.0]
+	at play.core.server.Server$class.sendHandler$1(Server.scala:56) [play_2.10.jar:2.1.0]
+	at play.core.server.Server$$anonfun$getHandlerFor$4.apply(Server.scala:88) [play_2.10.jar:2.1.0]
+	at play.core.server.Server$$anonfun$getHandlerFor$4.apply(Server.scala:87) [play_2.10.jar:2.1.0]
+	at scala.util.Either$RightProjection.flatMap(Either.scala:523) [scala-library.jar:na]
+	at play.core.server.Server$class.getHandlerFor(Server.scala:87) [play_2.10.jar:2.1.0]
+	at play.core.server.NettyServer.getHandlerFor(NettyServer.scala:34) [play_2.10.jar:2.1.0]
+	at play.core.server.netty.PlayDefaultUpstreamHandler.messageReceived(PlayDefaultUpstreamHandler.scala:103) [play_2.10.jar:2.1.0]
+	at org.jboss.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:75) [netty.jar:na]
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:565) [netty.jar:na]
+	at org.jboss.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:793) [netty.jar:na]
+	at org.jboss.netty.handler.codec.http.HttpContentDecoder.messageReceived(HttpContentDecoder.java:104) [netty.jar:na]
+	at org.jboss.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:75) [netty.jar:na]
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:565) [netty.jar:na]
+	at org.jboss.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:793) [netty.jar:na]
+	at org.jboss.netty.channel.Channels.fireMessageReceived(Channels.java:296) [netty.jar:na]
+	at org.jboss.netty.handler.codec.frame.FrameDecoder.unfoldAndFireMessageReceived(FrameDecoder.java:455) [netty.jar:na]
+	at org.jboss.netty.handler.codec.replay.ReplayingDecoder.callDecode(ReplayingDecoder.java:538) [netty.jar:na]
+	at org.jboss.netty.handler.codec.replay.ReplayingDecoder.messageReceived(ReplayingDecoder.java:437) [netty.jar:na]
+	at org.jboss.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:75) [netty.jar:na]
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:565) [netty.jar:na]
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:560) [netty.jar:na]
+	at org.jboss.netty.channel.Channels.fireMessageReceived(Channels.java:268) [netty.jar:na]
+	at org.jboss.netty.channel.Channels.fireMessageReceived(Channels.java:255) [netty.jar:na]
+	at org.jboss.netty.channel.socket.nio.NioWorker.read(NioWorker.java:84) [netty.jar:na]
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.processSelectedKeys(AbstractNioWorker.java:472) [netty.jar:na]
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.run(AbstractNioWorker.java:333) [netty.jar:na]
+	at org.jboss.netty.channel.socket.nio.NioWorker.run(NioWorker.java:35) [netty.jar:na]
+	at org.jboss.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:102) [netty.jar:na]
+	at org.jboss.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42) [netty.jar:na]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895) [na:1.6.0_43]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918) [na:1.6.0_43]
+	at java.lang.Thread.run(Thread.java:680) [na:1.6.0_43]
+
+2013-05-17 11:29:29,584 - [DEBUG] - from application in New I/O  worker #3 
+** onStart **
+
+2013-05-17 11:29:29,602 - [DEBUG] - from application in New I/O  worker #3 
+** Morphia datastore: dev
+
+2013-05-17 11:29:29,602 - [INFO] - from play in New I/O  worker #3 
+Application started (Dev)
+
+2013-05-17 11:29:29,615 - [DEBUG] - from application in play-akka.actor.default-dispatcher-16 
+username CassyJens
+
+2013-05-17 11:29:29,615 - [DEBUG] - from application in play-akka.actor.default-dispatcher-16 
+email jens.cass@gmail.com
+
+2013-05-17 11:29:29,615 - [DEBUG] - from application in play-akka.actor.default-dispatcher-16 
+password password
+
+2013-05-17 11:29:29,616 - [DEBUG] - from application in play-akka.actor.default-dispatcher-16 
+status 1
+
+2013-05-17 11:29:29,616 - [DEBUG] - from application in play-akka.actor.default-dispatcher-16 
+enumStatus ACTIVE
+
+2013-05-17 11:29:29,616 - [DEBUG] - from application in play-akka.actor.default-dispatcher-16 
+_id 5195a7ae1a880efec24def3f
+
+2013-05-17 11:29:29,617 - [DEBUG] - from application in play-akka.actor.default-dispatcher-16 
+fg = [models.FileGroup@50ab9eed]
+
+2013-05-17 11:29:29,807 - [DEBUG] - from application in play-akka.actor.default-dispatcher-23 
+models.FileGroup@7f372965
+
+2013-05-17 11:29:32,534 - [DEBUG] - from application in play-akka.actor.default-dispatcher-24 
+models.FileGroup@44b70e32
+
+2013-05-17 11:29:33,154 - [DEBUG] - from application in play-akka.actor.default-dispatcher-23 
+username CassyJens
+
+2013-05-17 11:29:33,154 - [DEBUG] - from application in play-akka.actor.default-dispatcher-23 
+email jens.cass@gmail.com
+
+2013-05-17 11:29:33,171 - [DEBUG] - from application in play-akka.actor.default-dispatcher-23 
+password password
+
+2013-05-17 11:29:33,172 - [DEBUG] - from application in play-akka.actor.default-dispatcher-23 
+status 1
+
+2013-05-17 11:29:33,172 - [DEBUG] - from application in play-akka.actor.default-dispatcher-23 
+enumStatus ACTIVE
+
+2013-05-17 11:29:33,172 - [DEBUG] - from application in play-akka.actor.default-dispatcher-23 
+_id 5195a7ae1a880efec24def3f
+
+2013-05-17 11:29:33,174 - [DEBUG] - from application in play-akka.actor.default-dispatcher-23 
+fg = [models.FileGroup@565e8588]
+
+2013-05-17 11:29:33,312 - [DEBUG] - from application in play-akka.actor.default-dispatcher-21 
+models.FileGroup@1d8a4916
+
+2013-05-17 11:30:04,128 - [DEBUG] - from application in play-akka.actor.default-dispatcher-31 
+models.FileGroup@59834848
+
+2013-05-17 11:30:08,693 - [DEBUG] - from application in play-akka.actor.default-dispatcher-34 
+models.FileGroup@1676fe3a
+
+2013-05-17 11:30:12,904 - [DEBUG] - from application in play-akka.actor.default-dispatcher-34 
+in submit
+
+2013-05-17 11:30:12,906 - [DEBUG] - from application in play-akka.actor.default-dispatcher-34 
+in validate
+
+2013-05-17 11:30:12,906 - [DEBUG] - from application in play-akka.actor.default-dispatcher-34 
+email jens.cass@gmail.com
+
+2013-05-17 11:30:12,906 - [DEBUG] - from application in play-akka.actor.default-dispatcher-34 
+password password
+
+2013-05-17 11:30:12,906 - [DEBUG] - from application in play-akka.actor.default-dispatcher-34 
+email: jens.cass@gmail.com
+
+2013-05-17 11:30:12,906 - [DEBUG] - from application in play-akka.actor.default-dispatcher-34 
+password: password
+
+2013-05-17 11:30:12,906 - [DEBUG] - from application in play-akka.actor.default-dispatcher-34 
+datastore not null
+
+2013-05-17 11:30:12,906 - [DEBUG] - from application in play-akka.actor.default-dispatcher-34 
+query created
+
+2013-05-17 11:30:12,908 - [DEBUG] - from application in play-akka.actor.default-dispatcher-34 
+user is retrieved
+
+2013-05-17 11:30:12,908 - [DEBUG] - from application in play-akka.actor.default-dispatcher-34 
+returning null
+
+2013-05-17 11:30:13,072 - [DEBUG] - from application in play-akka.actor.default-dispatcher-30 
+models.FileGroup@58d6c6a0
+
+2013-05-17 11:30:18,566 - [DEBUG] - from application in play-akka.actor.default-dispatcher-35 
+models.FileGroup@5a55a0da
+
+2013-05-17 11:30:30,591 - [DEBUG] - from application in play-akka.actor.default-dispatcher-30 
+username CassyJens
+
+2013-05-17 11:30:30,591 - [DEBUG] - from application in play-akka.actor.default-dispatcher-30 
+email jens.cass@gmail.com
+
+2013-05-17 11:30:30,592 - [DEBUG] - from application in play-akka.actor.default-dispatcher-30 
+password password
+
+2013-05-17 11:30:30,592 - [DEBUG] - from application in play-akka.actor.default-dispatcher-30 
+status 1
+
+2013-05-17 11:30:30,592 - [DEBUG] - from application in play-akka.actor.default-dispatcher-30 
+enumStatus ACTIVE
+
+2013-05-17 11:30:30,592 - [DEBUG] - from application in play-akka.actor.default-dispatcher-30 
+_id 5195a7ae1a880efec24def3f
+
+2013-05-17 11:30:30,593 - [DEBUG] - from application in play-akka.actor.default-dispatcher-30 
+fg = [models.FileGroup@7fba18ce]
+
+2013-05-17 11:30:30,839 - [DEBUG] - from application in play-akka.actor.default-dispatcher-25 
+models.FileGroup@15e8d410
+
+2013-05-17 11:32:17,468 - [DEBUG] - from application in New I/O  worker #1 
+** onStart **
+
+2013-05-17 11:32:17,486 - [DEBUG] - from application in New I/O  worker #1 
+** Morphia datastore: dev
+
+2013-05-17 11:32:17,486 - [INFO] - from play in New I/O  worker #1 
+Application started (Dev)
+
+2013-05-17 11:32:35,616 - [DEBUG] - from application in play-akka.actor.default-dispatcher-40 
+upload: saved GridFS file id = [51965ba31a88157765f1e006]
+
+2013-05-17 11:32:35,617 - [DEBUG] - from application in play-akka.actor.default-dispatcher-40 
+upload: fileName = [smallfile1]
+
+2013-05-17 11:32:35,617 - [DEBUG] - from application in play-akka.actor.default-dispatcher-40 
 upload: contentType = [application/octet-stream]
 
-2013-05-12 16:37:09,607 - [DEBUG] - from application in play-akka.actor.default-dispatcher-18 
-save: email = [jens.cass@gmail.com]
+2013-05-17 11:32:35,618 - [DEBUG] - from application in play-akka.actor.default-dispatcher-40 
+upload: email = [jens.cass@gmail.com]
 
-2013-05-12 16:37:09,611 - [DEBUG] - from application in play-akka.actor.default-dispatcher-18 
-upload: saved file id = [51900b851a881ceaf433a9f7]
+2013-05-17 11:32:35,619 - [DEBUG] - from application in play-akka.actor.default-dispatcher-40 
+eco file created
 
-2013-05-12 16:37:09,613 - [DEBUG] - from application in play-akka.actor.default-dispatcher-18 
-upload: fileName = [MthResearch.tex]
+2013-05-17 11:32:35,623 - [DEBUG] - from application in play-akka.actor.default-dispatcher-40 
+username CassyJens
 
-2013-05-12 16:37:09,614 - [DEBUG] - from application in play-akka.actor.default-dispatcher-18 
-upload: contentType = [application/x-tex]
+2013-05-17 11:32:35,623 - [DEBUG] - from application in play-akka.actor.default-dispatcher-40 
+email jens.cass@gmail.com
 
-2013-05-12 16:37:09,615 - [DEBUG] - from application in play-akka.actor.default-dispatcher-18 
-save: email = [jens.cass@gmail.com]
+2013-05-17 11:32:35,623 - [DEBUG] - from application in play-akka.actor.default-dispatcher-40 
+password password
 
-2013-05-12 16:37:09,619 - [DEBUG] - from application in play-akka.actor.default-dispatcher-18 
-upload: saved file id = [51900b851a881ceaf433a9f9]
+2013-05-17 11:32:35,623 - [DEBUG] - from application in play-akka.actor.default-dispatcher-40 
+status 1
 
-2013-05-12 16:37:09,622 - [DEBUG] - from application in play-akka.actor.default-dispatcher-18 
-upload: fileName = [MthResearch.aux]
+2013-05-17 11:32:35,623 - [DEBUG] - from application in play-akka.actor.default-dispatcher-40 
+enumStatus ACTIVE
 
-2013-05-12 16:37:09,622 - [DEBUG] - from application in play-akka.actor.default-dispatcher-18 
+2013-05-17 11:32:35,623 - [DEBUG] - from application in play-akka.actor.default-dispatcher-40 
+_id 5195a7ae1a880efec24def3f
+
+2013-05-17 11:32:35,624 - [DEBUG] - from application in play-akka.actor.default-dispatcher-40 
+fg = [null]
+
+2013-05-17 11:32:35,624 - [DEBUG] - from application in play-akka.actor.default-dispatcher-40 
+**********file group by email jens.cass@gmail.comnot found
+
+2013-05-17 11:32:35,627 - [DEBUG] - from application in play-akka.actor.default-dispatcher-40 
+about to update this biz: []
+
+2013-05-17 11:32:35,629 - [DEBUG] - from application in play-akka.actor.default-dispatcher-40 
+upload: saved GridFS file id = [51965ba31a88157765f1e009]
+
+2013-05-17 11:32:35,629 - [DEBUG] - from application in play-akka.actor.default-dispatcher-40 
+upload: fileName = [smallfile2]
+
+2013-05-17 11:32:35,629 - [DEBUG] - from application in play-akka.actor.default-dispatcher-40 
 upload: contentType = [application/octet-stream]
 
-2013-05-12 16:37:09,623 - [DEBUG] - from application in play-akka.actor.default-dispatcher-18 
-save: email = [jens.cass@gmail.com]
+2013-05-17 11:32:35,631 - [DEBUG] - from application in play-akka.actor.default-dispatcher-40 
+upload: email = [jens.cass@gmail.com]
 
-2013-05-12 16:37:09,625 - [DEBUG] - from application in play-akka.actor.default-dispatcher-18 
-upload: saved file id = [51900b851a881ceaf433a9fb]
+2013-05-17 11:32:35,631 - [DEBUG] - from application in play-akka.actor.default-dispatcher-40 
+eco file created
 
-2013-05-12 16:37:09,646 - [DEBUG] - from application in play-akka.actor.default-dispatcher-18 
-upload: fileName = [MthResearch.pdf]
+2013-05-17 11:32:35,634 - [DEBUG] - from application in play-akka.actor.default-dispatcher-40 
+username CassyJens
 
-2013-05-12 16:37:09,646 - [DEBUG] - from application in play-akka.actor.default-dispatcher-18 
-upload: contentType = [application/pdf]
+2013-05-17 11:32:35,634 - [DEBUG] - from application in play-akka.actor.default-dispatcher-40 
+email jens.cass@gmail.com
 
-2013-05-12 16:37:09,648 - [DEBUG] - from application in play-akka.actor.default-dispatcher-18 
-save: email = [jens.cass@gmail.com]
+2013-05-17 11:32:35,634 - [DEBUG] - from application in play-akka.actor.default-dispatcher-40 
+password password
 
-2013-05-12 16:37:09,675 - [DEBUG] - from application in play-akka.actor.default-dispatcher-18 
-upload: saved file id = [51900b851a881ceaf433a9fd]
+2013-05-17 11:32:35,634 - [DEBUG] - from application in play-akka.actor.default-dispatcher-40 
+status 1
+
+2013-05-17 11:32:35,634 - [DEBUG] - from application in play-akka.actor.default-dispatcher-40 
+enumStatus ACTIVE
+
+2013-05-17 11:32:35,634 - [DEBUG] - from application in play-akka.actor.default-dispatcher-40 
+_id 5195a7ae1a880efec24def3f
+
+2013-05-17 11:32:35,635 - [DEBUG] - from application in play-akka.actor.default-dispatcher-40 
+fg = [models.FileGroup@59ddcbf9]
+
+2013-05-17 11:32:35,635 - [DEBUG] - from application in play-akka.actor.default-dispatcher-40 
+about to update this biz: [51965ba31a88157765f1e006]
+
+2013-05-17 11:32:35,975 - [DEBUG] - from application in play-akka.actor.default-dispatcher-45 
+models.FileGroup@7ff67dee
+
+2013-05-17 11:32:38,132 - [DEBUG] - from application in play-akka.actor.default-dispatcher-48 
+models.FileGroup@24859367
+
+2013-05-17 11:32:42,979 - [DEBUG] - from application in play-akka.actor.default-dispatcher-43 
+username CassyJens
+
+2013-05-17 11:32:42,979 - [DEBUG] - from application in play-akka.actor.default-dispatcher-43 
+email jens.cass@gmail.com
+
+2013-05-17 11:32:42,979 - [DEBUG] - from application in play-akka.actor.default-dispatcher-43 
+password password
+
+2013-05-17 11:32:42,979 - [DEBUG] - from application in play-akka.actor.default-dispatcher-43 
+status 1
+
+2013-05-17 11:32:42,979 - [DEBUG] - from application in play-akka.actor.default-dispatcher-43 
+enumStatus ACTIVE
+
+2013-05-17 11:32:42,980 - [DEBUG] - from application in play-akka.actor.default-dispatcher-43 
+_id 5195a7ae1a880efec24def3f
+
+2013-05-17 11:32:42,981 - [DEBUG] - from application in play-akka.actor.default-dispatcher-43 
+fg = [models.FileGroup@7ca4f80e]
+
+2013-05-17 11:32:43,242 - [DEBUG] - from application in play-akka.actor.default-dispatcher-44 
+models.FileGroup@106faf1e
+
+2013-05-17 11:33:33,684 - [DEBUG] - from application in New I/O  worker #1 
+** onStart **
+
+2013-05-17 11:33:33,705 - [DEBUG] - from application in New I/O  worker #1 
+** Morphia datastore: dev
+
+2013-05-17 11:33:33,705 - [INFO] - from play in New I/O  worker #1 
+Application started (Dev)
+
+2013-05-17 11:33:34,335 - [DEBUG] - from application in play-akka.actor.default-dispatcher-51 
+models.FileGroup@76d0be7e
+
+2013-05-17 11:33:40,176 - [DEBUG] - from application in play-akka.actor.default-dispatcher-46 
+in submit
+
+2013-05-17 11:33:40,179 - [DEBUG] - from application in play-akka.actor.default-dispatcher-46 
+in validate
+
+2013-05-17 11:33:40,179 - [DEBUG] - from application in play-akka.actor.default-dispatcher-46 
+email jens.cass@gmail.com
+
+2013-05-17 11:33:40,179 - [DEBUG] - from application in play-akka.actor.default-dispatcher-46 
+password password
+
+2013-05-17 11:33:40,179 - [DEBUG] - from application in play-akka.actor.default-dispatcher-46 
+email: jens.cass@gmail.com
+
+2013-05-17 11:33:40,179 - [DEBUG] - from application in play-akka.actor.default-dispatcher-46 
+password: password
+
+2013-05-17 11:33:40,179 - [DEBUG] - from application in play-akka.actor.default-dispatcher-46 
+datastore not null
+
+2013-05-17 11:33:40,179 - [DEBUG] - from application in play-akka.actor.default-dispatcher-46 
+query created
+
+2013-05-17 11:33:40,181 - [DEBUG] - from application in play-akka.actor.default-dispatcher-46 
+user is retrieved
+
+2013-05-17 11:33:40,181 - [DEBUG] - from application in play-akka.actor.default-dispatcher-46 
+returning null
+
+2013-05-17 11:33:40,452 - [DEBUG] - from application in play-akka.actor.default-dispatcher-54 
+models.FileGroup@1589471a
+
+2013-05-17 11:33:42,445 - [DEBUG] - from application in play-akka.actor.default-dispatcher-54 
+username CassyJens
+
+2013-05-17 11:33:42,445 - [DEBUG] - from application in play-akka.actor.default-dispatcher-54 
+email jens.cass@gmail.com
+
+2013-05-17 11:33:42,445 - [DEBUG] - from application in play-akka.actor.default-dispatcher-54 
+password password
+
+2013-05-17 11:33:42,445 - [DEBUG] - from application in play-akka.actor.default-dispatcher-54 
+status 1
+
+2013-05-17 11:33:42,445 - [DEBUG] - from application in play-akka.actor.default-dispatcher-54 
+enumStatus ACTIVE
+
+2013-05-17 11:33:42,446 - [DEBUG] - from application in play-akka.actor.default-dispatcher-54 
+_id 5195a7ae1a880efec24def3f
+
+2013-05-17 11:33:42,447 - [DEBUG] - from application in play-akka.actor.default-dispatcher-54 
+fg = [models.FileGroup@4093b096]
+
+2013-05-17 11:33:42,711 - [DEBUG] - from application in play-akka.actor.default-dispatcher-46 
+models.FileGroup@3252ac20
+
+2013-05-17 11:34:48,983 - [ERROR] - from application in New I/O  worker #3 
+
+
+! @6eb05mkhb - Internal server error, for (GET) [/filemanagement/download] ->
+
+sbt.PlayExceptions$CompilationException: Compilation error[render(java.util.List<models.EcoFile>,java.util.List<models.FileGroup>) in views.html.file.download.form cannot be applied to (java.util.List<models.EcoFile>)]
+	at sbt.PlayReloader$$anon$2$$anonfun$reload$2$$anonfun$apply$15$$anonfun$apply$16.apply(PlayReloader.scala:349) ~[na:na]
+	at sbt.PlayReloader$$anon$2$$anonfun$reload$2$$anonfun$apply$15$$anonfun$apply$16.apply(PlayReloader.scala:349) ~[na:na]
+	at scala.Option.map(Option.scala:133) ~[scala-library.jar:na]
+	at sbt.PlayReloader$$anon$2$$anonfun$reload$2$$anonfun$apply$15.apply(PlayReloader.scala:349) ~[na:na]
+	at sbt.PlayReloader$$anon$2$$anonfun$reload$2$$anonfun$apply$15.apply(PlayReloader.scala:346) ~[na:na]
+	at scala.Option.map(Option.scala:133) ~[scala-library.jar:na]
+	at sbt.PlayReloader$$anon$2$$anonfun$reload$2.apply(PlayReloader.scala:346) ~[na:na]
+	at sbt.PlayReloader$$anon$2$$anonfun$reload$2.apply(PlayReloader.scala:344) ~[na:na]
+	at scala.Either$LeftProjection.map(Either.scala:374) ~[na:na]
+	at sbt.PlayReloader$$anon$2.reload(PlayReloader.scala:344) ~[na:na]
+	at play.core.ReloadableApplication.get(ApplicationProvider.scala:98) ~[play_2.10.jar:2.1.0]
+	at play.core.server.Server$class.sendHandler$1(Server.scala:56) [play_2.10.jar:2.1.0]
+	at play.core.server.Server$$anonfun$getHandlerFor$4.apply(Server.scala:88) [play_2.10.jar:2.1.0]
+	at play.core.server.Server$$anonfun$getHandlerFor$4.apply(Server.scala:87) [play_2.10.jar:2.1.0]
+	at scala.util.Either$RightProjection.flatMap(Either.scala:523) [scala-library.jar:na]
+	at play.core.server.Server$class.getHandlerFor(Server.scala:87) [play_2.10.jar:2.1.0]
+	at play.core.server.NettyServer.getHandlerFor(NettyServer.scala:34) [play_2.10.jar:2.1.0]
+	at play.core.server.netty.PlayDefaultUpstreamHandler.messageReceived(PlayDefaultUpstreamHandler.scala:103) [play_2.10.jar:2.1.0]
+	at org.jboss.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:75) [netty.jar:na]
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:565) [netty.jar:na]
+	at org.jboss.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:793) [netty.jar:na]
+	at org.jboss.netty.handler.codec.http.HttpContentDecoder.messageReceived(HttpContentDecoder.java:104) [netty.jar:na]
+	at org.jboss.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:75) [netty.jar:na]
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:565) [netty.jar:na]
+	at org.jboss.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:793) [netty.jar:na]
+	at org.jboss.netty.channel.Channels.fireMessageReceived(Channels.java:296) [netty.jar:na]
+	at org.jboss.netty.handler.codec.frame.FrameDecoder.unfoldAndFireMessageReceived(FrameDecoder.java:455) [netty.jar:na]
+	at org.jboss.netty.handler.codec.replay.ReplayingDecoder.callDecode(ReplayingDecoder.java:538) [netty.jar:na]
+	at org.jboss.netty.handler.codec.replay.ReplayingDecoder.messageReceived(ReplayingDecoder.java:437) [netty.jar:na]
+	at org.jboss.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:75) [netty.jar:na]
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:565) [netty.jar:na]
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:560) [netty.jar:na]
+	at org.jboss.netty.channel.Channels.fireMessageReceived(Channels.java:268) [netty.jar:na]
+	at org.jboss.netty.channel.Channels.fireMessageReceived(Channels.java:255) [netty.jar:na]
+	at org.jboss.netty.channel.socket.nio.NioWorker.read(NioWorker.java:84) [netty.jar:na]
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.processSelectedKeys(AbstractNioWorker.java:472) [netty.jar:na]
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.run(AbstractNioWorker.java:333) [netty.jar:na]
+	at org.jboss.netty.channel.socket.nio.NioWorker.run(NioWorker.java:35) [netty.jar:na]
+	at org.jboss.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:102) [netty.jar:na]
+	at org.jboss.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42) [netty.jar:na]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895) [na:1.6.0_43]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918) [na:1.6.0_43]
+	at java.lang.Thread.run(Thread.java:680) [na:1.6.0_43]
+
+2013-05-17 11:36:03,819 - [DEBUG] - from application in New I/O  worker #3 
+** onStart **
+
+2013-05-17 11:36:03,866 - [DEBUG] - from application in New I/O  worker #3 
+** Morphia datastore: dev
+
+2013-05-17 11:36:03,867 - [INFO] - from play in New I/O  worker #3 
+Application started (Dev)
+
+2013-05-17 11:36:04,599 - [DEBUG] - from application in play-akka.actor.default-dispatcher-55 
+models.FileGroup@77dbf87d
+
+2013-05-17 11:36:06,434 - [DEBUG] - from application in play-akka.actor.default-dispatcher-57 
+models.FileGroup@5a77aa9e
+
+2013-05-17 11:36:12,365 - [DEBUG] - from application in play-akka.actor.default-dispatcher-63 
+in submit
+
+2013-05-17 11:36:12,368 - [DEBUG] - from application in play-akka.actor.default-dispatcher-63 
+in validate
+
+2013-05-17 11:36:12,369 - [DEBUG] - from application in play-akka.actor.default-dispatcher-63 
+email jens.cass@gmail.com
+
+2013-05-17 11:36:12,369 - [DEBUG] - from application in play-akka.actor.default-dispatcher-63 
+password password
+
+2013-05-17 11:36:12,369 - [DEBUG] - from application in play-akka.actor.default-dispatcher-63 
+email: jens.cass@gmail.com
+
+2013-05-17 11:36:12,369 - [DEBUG] - from application in play-akka.actor.default-dispatcher-63 
+password: password
+
+2013-05-17 11:36:12,369 - [DEBUG] - from application in play-akka.actor.default-dispatcher-63 
+datastore not null
+
+2013-05-17 11:36:12,370 - [DEBUG] - from application in play-akka.actor.default-dispatcher-63 
+query created
+
+2013-05-17 11:36:12,372 - [DEBUG] - from application in play-akka.actor.default-dispatcher-63 
+user is retrieved
+
+2013-05-17 11:36:12,372 - [DEBUG] - from application in play-akka.actor.default-dispatcher-63 
+returning null
+
+2013-05-17 11:36:12,642 - [DEBUG] - from application in play-akka.actor.default-dispatcher-58 
+models.FileGroup@7f641270
+
+2013-05-17 11:36:15,300 - [DEBUG] - from application in play-akka.actor.default-dispatcher-63 
+username CassyJens
+
+2013-05-17 11:36:15,300 - [DEBUG] - from application in play-akka.actor.default-dispatcher-63 
+email jens.cass@gmail.com
+
+2013-05-17 11:36:15,300 - [DEBUG] - from application in play-akka.actor.default-dispatcher-63 
+password password
+
+2013-05-17 11:36:15,300 - [DEBUG] - from application in play-akka.actor.default-dispatcher-63 
+status 1
+
+2013-05-17 11:36:15,300 - [DEBUG] - from application in play-akka.actor.default-dispatcher-63 
+enumStatus ACTIVE
+
+2013-05-17 11:36:15,300 - [DEBUG] - from application in play-akka.actor.default-dispatcher-63 
+_id 5195a7ae1a880efec24def3f
+
+2013-05-17 11:36:15,301 - [DEBUG] - from application in play-akka.actor.default-dispatcher-63 
+fg = [models.FileGroup@309175b0]
+
+2013-05-17 11:36:15,530 - [DEBUG] - from application in play-akka.actor.default-dispatcher-62 
+models.FileGroup@325b77ed
+
+2013-05-17 11:36:21,086 - [DEBUG] - from application in play-akka.actor.default-dispatcher-60 
+username CassyJens
+
+2013-05-17 11:36:21,087 - [DEBUG] - from application in play-akka.actor.default-dispatcher-60 
+email jens.cass@gmail.com
+
+2013-05-17 11:36:21,087 - [DEBUG] - from application in play-akka.actor.default-dispatcher-60 
+password password
+
+2013-05-17 11:36:21,087 - [DEBUG] - from application in play-akka.actor.default-dispatcher-60 
+status 1
+
+2013-05-17 11:36:21,087 - [DEBUG] - from application in play-akka.actor.default-dispatcher-60 
+enumStatus ACTIVE
+
+2013-05-17 11:36:21,087 - [DEBUG] - from application in play-akka.actor.default-dispatcher-60 
+_id 5195a7ae1a880efec24def3f
+
+2013-05-17 11:36:21,088 - [DEBUG] - from application in play-akka.actor.default-dispatcher-60 
+fg = [models.FileGroup@21b21f5c]
+
+2013-05-17 11:36:21,319 - [DEBUG] - from application in play-akka.actor.default-dispatcher-59 
+models.FileGroup@c09a095
 

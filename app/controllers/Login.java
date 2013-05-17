@@ -28,9 +28,17 @@ public class Login extends Controller {
         public String password;
 
         public String validate() {
-            if(User.authenticate(email, password) == null){
+            
+            Logger.debug("in validate");
+            Logger.debug("email " + email);
+            Logger.debug("password " + password);
+            
+            if( User.authenticate(email, password) == null ){
+                Logger.debug("authenticate = null");
                 return "Invalid username or password.";
             }  
+            
+            Logger.debug("returning null");
             return null;
         } 
     }
@@ -47,7 +55,9 @@ public class Login extends Controller {
      * Handle login form submission.
      */
     public static Result submit() {
+        Logger.debug("in submit");
         Form<LoginForm> loginForm = form(LoginForm.class).bindFromRequest();
+        
         if(loginForm.hasErrors()) {
             return badRequest(form.render(loginForm));
         } else {

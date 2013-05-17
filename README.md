@@ -8,3 +8,11 @@ Developed by Cassy Jens
 
 
 
+### Standards
+1. Every model has the following methods
+	- ObjectId save()
+
+
+### TODO
+1. Change of email
+	- Update existing files, file groups and user to reflect email change

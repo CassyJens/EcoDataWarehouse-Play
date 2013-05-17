@@ -1,5 +1,5 @@
 package models;
 
-public class Permission {
-	public Permission() {}
+public enum Permission {
+	READ, WRITE, READWRITE, PRIVATE
 }

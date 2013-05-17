@@ -8,6 +8,7 @@ import com.mongodb.Mongo;
 import com.mongodb.gridfs.GridFS;
 
 import controllers.MorphiaObject;
+import models.*;
 
 public class Global extends GlobalSettings {
 
@@ -25,6 +26,9 @@ public class Global extends GlobalSettings {
 		}
 		
 		MorphiaObject.morphia = new Morphia();
+
+		MorphiaObject.morphia.map(User.class).map(FileGroup.class).map(EcoFile.class);
+
 		MorphiaObject.datastore = MorphiaObject.morphia.createDatastore(MorphiaObject.mongo, "dev");
 		MorphiaObject.datastore.ensureIndexes();   
 		MorphiaObject.datastore.ensureCaps(); 
