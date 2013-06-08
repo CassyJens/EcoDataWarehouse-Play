@@ -29,7 +29,7 @@ import org.bson.types.ObjectId;
 /**
  * Manage file operations.
  */
-@Security.Authenticated(Secure.class)
+//@Security.Authenticated(Secure.class)
 public class FileManagement extends Controller {
 
     /**

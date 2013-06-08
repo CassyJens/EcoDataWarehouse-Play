@@ -12,14 +12,18 @@ import models.*;
 /**
  * New User Registration
  */
-@Security.Authenticated(Secure.class)
+//@Security.Authenticated(Secure.class)
 public class Register extends Controller {
 
     /**
-     *  Defines a form wrapping the user class.
+     *  Defines a FORM wrapping the user class.
      */
     final static Form<User> signupForm = form(User.class);
   
+    
+    /* VIEWS */
+
+
     /**
      * Display a blank form.
      */ 
@@ -58,6 +62,7 @@ public class Register extends Controller {
             }
             
             try {
+                Logger.debug("Finding user " + email);
                 User.findByEmail(email);
                 filledForm.reject("email", "There is already an account associated with this email address.");
             }
@@ -71,7 +76,7 @@ public class Register extends Controller {
             return badRequest(form.render(filledForm));
         } else {
             User user = filledForm.get(); /* create an object from a form */
-            user.save();
+            user.save();            
             return ok(summary.render(user));
         }
     }

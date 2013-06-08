@@ -13,6 +13,7 @@ import org.bson.types.ObjectId;
 
 import com.google.code.morphia.annotations.Entity;
 import com.google.code.morphia.annotations.Id;
+import com.google.code.morphia.annotations.Embedded;
 import com.google.code.morphia.Morphia;
 import com.google.code.morphia.query.Query;
 import com.google.code.morphia.query.QueryImpl;
@@ -23,56 +24,60 @@ import controllers.MorphiaObject;
 
 @Entity public class FileGroup implements ModelApi<FileGroup> {
 
-    @Id public ObjectId id;
-	public List<ObjectId> fileGroups;
-	public List<ObjectId> fileIds = new ArrayList<ObjectId>();
-	public Permission permission; // read write
-    public ObjectId owner;
-	public Date dateLastModified;
-	public Date dateUploaded;
-    public String description = "description";
-    private Status enumStatus = Status.ACTIVE;	
-    @Required
-    public String name;
-    
+    /**
+     * PROPERTIES
+     */
+    @Id 
+    public ObjectId id;
 
+    @Required
+    public String name = "";
+
+    @Required
+    public String description = "";
+
+    // File group
+	public List<ObjectId> fileGroups = new ArrayList<ObjectId>();
+	public List<ObjectId> fileIds = new ArrayList<ObjectId>();
+    
+    // Metadata
+    public List<Object> metadata;
+    @Embedded
+    public List<Location> locations;
+
+    @Embedded
+    public Standards standards;
+
+    /**
+     * FUNCTIONS
+     */
 
     public FileGroup() {}
 
     public FileGroup(
     	String email, 
     	String name, 
-    	String description, 
-    	Permission permission) {
+    	String description) {
 
     	this.name = name;
     	this.description = description;
-    	this.permission = permission;
+        this.standards = new Standards(email);
 
 		try {
-            this.owner = User.findByEmail(email).id;
+            this.standards.createdBy = User.findByEmail(email).id;
         }
         catch(Exception e) {
             
         }
     }
 
-    /**
-     * Creates the default file group for a user
-     */
-	public FileGroup(String email) throws Exception {
-		this.name = "Default for " + email;
-		this.permission = Permission.READWRITE; // default
-		this.description = "";
-        this.owner = User.findByEmail(email).id;
-	}
 
 	/**
 	 * Adds a file to the file group if it doesn't 
 	 * already exist 
 	 * Input: ObjectId is the id for the file to add
 	 */
-	public void addEcoFile(ObjectId id) {
+	public void addEcoFile(ObjectId fileId) {
 
         Query<FileGroup> updateQuery;
 		Datastore ds = MorphiaObject.datastore;
@@ -80,8 +85,7 @@ import controllers.MorphiaObject;
         try {
             Logger.debug("about to update this biz: " + this.fileIds);
 
-			this.fileIds.add(id);
-            this.description = "description";
+			this.fileIds.add(fileId);
             updateQuery = MorphiaObject.datastore.createQuery(FileGroup.class).field("_id").equal(this.id);
 			ds.update(updateQuery, ds.createUpdateOperations(FileGroup.class).set("fileIds", this.fileIds)); 		
 		
@@ -115,7 +119,7 @@ import controllers.MorphiaObject;
     */
     public List<FileGroup> findAllFileGroups() {
         List<FileGroup> fg = new ArrayList<FileGroup>();
-        fg = MorphiaObject.datastore.find(FileGroup.class, "enumStatus", Status.ACTIVE).asList();
+        fg = MorphiaObject.datastore.find(FileGroup.class, "standards.state", State.ACTIVE).asList();
         for(FileGroup f : fg) {
             Logger.debug(f.toString());
         }
@@ -132,8 +136,6 @@ import controllers.MorphiaObject;
         Logger.debug("username " + user.username);
         Logger.debug("email " + user.email);
         Logger.debug("password " + user.password);
-        Logger.debug("status " + user.status);
-        Logger.debug("enumStatus " + user.enumStatus);
         Logger.debug("_id " + user.id);
 
         FileGroup fg = MorphiaObject.datastore.find(FileGroup.class).field("owner").equal(user.id).get();

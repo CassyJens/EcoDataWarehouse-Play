@@ -2,8 +2,6 @@ package models;
 import com.google.code.morphia.annotations.Embedded;
 
 @Embedded
-public class Location {
-
-	public Location() {}
-
+public enum Visibility {
+	PUBLIC, PRIVATE 
 }

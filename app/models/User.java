@@ -1,46 +1,55 @@
 package models;
-import javax.validation.*;
-import play.data.validation.Constraints.*;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import org.bson.types.ObjectId;
-import com.google.code.morphia.annotations.Entity;
-import com.google.code.morphia.annotations.Id;
-import com.google.code.morphia.Morphia;
-import com.google.code.morphia.query.Query;
-import com.google.code.morphia.query.QueryImpl;
-import controllers.MorphiaObject;
 import play.*;
 import play.mvc.*;
 import play.data.*;
+import play.data.validation.Constraints.*;
+
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+import javax.validation.*;
+
+import com.google.code.morphia.annotations.Entity;
+import com.google.code.morphia.annotations.Id;
+import com.google.code.morphia.annotations.Embedded;
+import com.google.code.morphia.Morphia;
+import com.google.code.morphia.query.Query;
+import com.google.code.morphia.query.QueryImpl;
+
+import controllers.MorphiaObject;
+import org.bson.types.ObjectId;
 
 @Entity public class User implements ModelApi<User> {
 
-    @Required
-    @MinLength(value = 4)
-    public String username;
+    @Required 
+    @MinLength(value = 4) 
+    public String username;  
     
-    @Required
-    @Email
+    @Required 
+    @Email 
     public String email;
     
-    @Required
-    @MinLength(value = 6)
+    @Required 
+    @MinLength(value = 6) 
     public String password;
-    public int status = 1;
-    public Status enumStatus = Status.ACTIVE;
-
-    @Id
-    public ObjectId id;
+    
+    public List<ObjectId> workingGroups; 
+    @Embedded public Standards standards;
+    @Id public ObjectId id;
 
     public User(){}
 
-	public User(String username, String email, String password){
+	public User(
+        String username, 
+        String email, 
+        String password){
+
 		this.username = username;
 		this.email = email;
 		this.password = password;
-	}
+	    this.standards = new Standards(email);
+        this.workingGroups.add(new WorkingGroup(email, "User's Default WorkingGroup", email).save());
+    }
 
     /**
      * Authenticate a User.
@@ -84,7 +93,7 @@ import play.data.*;
      */
     public List<User> findAllUsers() {
         List<User> users = new ArrayList<User>();
-        users = MorphiaObject.datastore.find(User.class, "enumStatus", Status.ACTIVE).asList();
+        users = MorphiaObject.datastore.find(User.class, "standards.state", State.ACTIVE).asList();
         return users;
     }
 
@@ -104,7 +113,10 @@ import play.data.*;
      */
     public static User findByEmail(String email) throws Exception {
         User user = MorphiaObject.datastore.find(User.class, "email", email).get();
-        if(user != null) return user;
+        if(user != null) {
+            Logger.debug("User found: " + user.email);
+            return user;
+        }
         else throw new Exception("User " + email + " does not exist");
     }
 
