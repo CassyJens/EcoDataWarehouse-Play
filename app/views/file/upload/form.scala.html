@@ -1,31 +1,22 @@
 @(status: String)
 
-@main("File Upload Form") {
-    @navprivate("Private Nav") {
-		@helper.form(action = routes.FileManagement.submitUpload, 'enctype -> "multipart/form-data") {
-		    
-		    <div class="container">
+@helper.form(action = routes.FileManagement.submitUpload, 'enctype -> "multipart/form-data") {
+ 
 
-			<h3> Upload Files </h3>
+	<div class="container">
+		<legend class="form-signing-heading"> Select a file group. </legend>
+			<select data-bind="options: $root.listFileGroups, optionsText: 'name'" multi="true">
+			</select>
+	</div>
 
-			<div class="container">
-				<legend class="form-signing-heading"> Link to file group(s). </legend>
-	    		<select data-bind="options: $root.listFileGroups, optionsText: 'name', optionsCaption: 'Choose from file groups...'" multi="true">
-		    	</select>
-		    	<br />
-    		</div>
-    		<div class="container">
-	    		<legend class="form-signing-heading"> Upload your files. </legend>
-	    		</select>
-			    	<input type="file" name="file" multiple >
-			    
-			    	<p>
-			    	    <input type="submit" class="btn">
-			    	</p>
+	<div class="container">
+		<legend class="form-signing-heading"> Select files. </legend>
+	    	<input type="file" name="file" multiple >
+	    
+	    	<p>
+	    	    <input type="submit" class="btn">
+	    	</p>
 
-	    			<p> @status </p>
-	    		</div>
-    		</div>
-		}
-	}
+			<p> @status </p>
+	</div>
 }

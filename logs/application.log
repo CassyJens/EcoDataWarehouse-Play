@@ -1,810 +1,168 @@
-2013-06-08 12:55:51,136 - [INFO] - from play in main 
+2013-06-09 00:34:06,404 - [INFO] - from play in main 
 Listening for HTTP on /0.0.0.0:8080
 
-2013-06-08 12:56:38,146 - [DEBUG] - from application in New I/O  worker #1 
+2013-06-09 00:34:13,978 - [DEBUG] - from application in New I/O  worker #1 
 ** onStart **
 
-2013-06-08 12:56:38,543 - [DEBUG] - from application in New I/O  worker #1 
+2013-06-09 00:34:14,960 - [DEBUG] - from application in New I/O  worker #1 
 ** Morphia datastore: dev
 
-2013-06-08 12:56:38,557 - [INFO] - from play in New I/O  worker #1 
+2013-06-09 00:34:15,016 - [INFO] - from play in New I/O  worker #1 
 Application started (Dev)
 
-2013-06-08 12:56:40,515 - [ERROR] - from application in play-internal-execution-context-2 
+2013-06-09 00:34:17,106 - [DEBUG] - from application in play-akka.actor.default-dispatcher-9 
+models.FileGroup@42c9aff0
 
-
-! @6eh4g3iel - Internal server error, for (GET) [/filegroup] ->
-
-play.api.Application$$anon$1: Execution exception[[ValidationException: The field 'state' could not be found in 'models.FileGroup' while validating - standards.state; if you wish to continue please disable validation.]]
-	at play.api.Application$class.handleError(Application.scala:289) ~[play_2.10.jar:2.1.0]
-	at play.api.DefaultApplication.handleError(Application.scala:383) [play_2.10.jar:2.1.0]
-	at play.core.server.netty.PlayDefaultUpstreamHandler$$anon$2$$anonfun$handle$1.apply(PlayDefaultUpstreamHandler.scala:132) [play_2.10.jar:2.1.0]
-	at play.core.server.netty.PlayDefaultUpstreamHandler$$anon$2$$anonfun$handle$1.apply(PlayDefaultUpstreamHandler.scala:128) [play_2.10.jar:2.1.0]
-	at play.api.libs.concurrent.PlayPromise$$anonfun$extend1$1.apply(Promise.scala:113) [play_2.10.jar:2.1.0]
-	at play.api.libs.concurrent.PlayPromise$$anonfun$extend1$1.apply(Promise.scala:113) [play_2.10.jar:2.1.0]
-	at play.api.libs.concurrent.PlayPromise$$anonfun$extend$1$$anonfun$apply$1.apply(Promise.scala:104) [play_2.10.jar:2.1.0]
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) [scala-library.jar:na]
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) [scala-library.jar:na]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895) [na:1.6.0_43]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918) [na:1.6.0_43]
-	at java.lang.Thread.run(Thread.java:680) [na:1.6.0_43]
-com.google.code.morphia.query.ValidationException: The field 'state' could not be found in 'models.FileGroup' while validating - standards.state; if you wish to continue please disable validation.
-	at com.google.code.morphia.mapping.Mapper.validate(Mapper.java:604) ~[morphia-0.99.jar:na]
-	at com.google.code.morphia.query.FieldCriteria.<init>(FieldCriteria.java:30) ~[morphia-0.99.jar:na]
-	at com.google.code.morphia.query.QueryImpl.filter(QueryImpl.java:317) ~[morphia-0.99.jar:na]
-	at com.google.code.morphia.DatastoreImpl.find(DatastoreImpl.java:401) ~[morphia-0.99.jar:na]
-	at models.FileGroup.findAllFileGroups(FileGroup.java:122) ~[na:na]
-	at controllers.Application.findAllFileGroups(Application.java:30) ~[na:na]
-	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$13$$anonfun$apply$13.apply(routes_routing.scala:193) ~[na:na]
-	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$13$$anonfun$apply$13.apply(routes_routing.scala:193) ~[na:na]
-	at play.core.Router$HandlerInvoker$$anon$6$$anon$2.invocation(Router.scala:141) ~[play_2.10.jar:2.1.0]
-	at play.core.Router$Routes$$anon$1.invocation(Router.scala:322) ~[play_2.10.jar:2.1.0]
-	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:31) ~[play_2.10.jar:2.1.0]
-	at play.GlobalSettings$1.call(GlobalSettings.java:63) ~[play_2.10.jar:2.1.0]
-	at play.core.j.JavaAction$$anon$2.apply(JavaAction.scala:74) ~[play_2.10.jar:2.1.0]
-	at play.core.j.JavaAction$$anon$2.apply(JavaAction.scala:73) ~[play_2.10.jar:2.1.0]
-	at play.libs.F$Promise$PromiseActor.onReceive(F.java:420) ~[play_2.10.jar:2.1.0]
-	at akka.actor.UntypedActor$$anonfun$receive$1.applyOrElse(UntypedActor.scala:159) ~[akka-actor_2.10.jar:na]
-	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:425) ~[akka-actor_2.10.jar:na]
-	at akka.actor.ActorCell.invoke(ActorCell.scala:386) ~[akka-actor_2.10.jar:na]
-	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:230) ~[akka-actor_2.10.jar:na]
-	at akka.dispatch.Mailbox.run(Mailbox.scala:212) ~[akka-actor_2.10.jar:na]
-	at akka.dispatch.ForkJoinExecutorConfigurator$MailboxExecutionTask.exec(AbstractDispatcher.scala:502) ~[akka-actor_2.10.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:262) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:975) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1478) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:104) ~[scala-library.jar:na]
-
-2013-06-08 12:56:40,518 - [ERROR] - from application in play-internal-execution-context-1 
-
-
-! @6eh4g3icp - Internal server error, for (GET) [/user] ->
-
-play.api.Application$$anon$1: Execution exception[[ValidationException: The field 'state' could not be found in 'models.User' while validating - standards.state; if you wish to continue please disable validation.]]
-	at play.api.Application$class.handleError(Application.scala:289) ~[play_2.10.jar:2.1.0]
-	at play.api.DefaultApplication.handleError(Application.scala:383) [play_2.10.jar:2.1.0]
-	at play.core.server.netty.PlayDefaultUpstreamHandler$$anon$2$$anonfun$handle$1.apply(PlayDefaultUpstreamHandler.scala:132) [play_2.10.jar:2.1.0]
-	at play.core.server.netty.PlayDefaultUpstreamHandler$$anon$2$$anonfun$handle$1.apply(PlayDefaultUpstreamHandler.scala:128) [play_2.10.jar:2.1.0]
-	at play.api.libs.concurrent.PlayPromise$$anonfun$extend1$1.apply(Promise.scala:113) [play_2.10.jar:2.1.0]
-	at play.api.libs.concurrent.PlayPromise$$anonfun$extend1$1.apply(Promise.scala:113) [play_2.10.jar:2.1.0]
-	at play.api.libs.concurrent.PlayPromise$$anonfun$extend$1$$anonfun$apply$1.apply(Promise.scala:104) [play_2.10.jar:2.1.0]
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) [scala-library.jar:na]
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) [scala-library.jar:na]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895) [na:1.6.0_43]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918) [na:1.6.0_43]
-	at java.lang.Thread.run(Thread.java:680) [na:1.6.0_43]
-com.google.code.morphia.query.ValidationException: The field 'state' could not be found in 'models.User' while validating - standards.state; if you wish to continue please disable validation.
-	at com.google.code.morphia.mapping.Mapper.validate(Mapper.java:604) ~[morphia-0.99.jar:na]
-	at com.google.code.morphia.query.FieldCriteria.<init>(FieldCriteria.java:30) ~[morphia-0.99.jar:na]
-	at com.google.code.morphia.query.QueryImpl.filter(QueryImpl.java:317) ~[morphia-0.99.jar:na]
-	at com.google.code.morphia.DatastoreImpl.find(DatastoreImpl.java:401) ~[morphia-0.99.jar:na]
-	at models.User.findAllUsers(User.java:96) ~[na:na]
-	at controllers.Application.findAllUsers(Application.java:24) ~[na:na]
-	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$12$$anonfun$apply$12.apply(routes_routing.scala:185) ~[na:na]
-	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$12$$anonfun$apply$12.apply(routes_routing.scala:185) ~[na:na]
-	at play.core.Router$HandlerInvoker$$anon$6$$anon$2.invocation(Router.scala:141) ~[play_2.10.jar:2.1.0]
-	at play.core.Router$Routes$$anon$1.invocation(Router.scala:322) ~[play_2.10.jar:2.1.0]
-	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:31) ~[play_2.10.jar:2.1.0]
-	at play.GlobalSettings$1.call(GlobalSettings.java:63) ~[play_2.10.jar:2.1.0]
-	at play.core.j.JavaAction$$anon$2.apply(JavaAction.scala:74) ~[play_2.10.jar:2.1.0]
-	at play.core.j.JavaAction$$anon$2.apply(JavaAction.scala:73) ~[play_2.10.jar:2.1.0]
-	at play.libs.F$Promise$PromiseActor.onReceive(F.java:420) ~[play_2.10.jar:2.1.0]
-	at akka.actor.UntypedActor$$anonfun$receive$1.applyOrElse(UntypedActor.scala:159) ~[akka-actor_2.10.jar:na]
-	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:425) ~[akka-actor_2.10.jar:na]
-	at akka.actor.ActorCell.invoke(ActorCell.scala:386) ~[akka-actor_2.10.jar:na]
-	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:230) ~[akka-actor_2.10.jar:na]
-	at akka.dispatch.Mailbox.run(Mailbox.scala:212) ~[akka-actor_2.10.jar:na]
-	at akka.dispatch.ForkJoinExecutorConfigurator$MailboxExecutionTask.exec(AbstractDispatcher.scala:502) ~[akka-actor_2.10.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:262) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:975) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1478) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:104) ~[scala-library.jar:na]
-
-2013-06-08 12:56:48,396 - [ERROR] - from application in play-internal-execution-context-2 
-
-
-! @6eh4g445p - Internal server error, for (GET) [/user] ->
-
-play.api.Application$$anon$1: Execution exception[[ValidationException: The field 'state' could not be found in 'models.User' while validating - standards.state; if you wish to continue please disable validation.]]
-	at play.api.Application$class.handleError(Application.scala:289) ~[play_2.10.jar:2.1.0]
-	at play.api.DefaultApplication.handleError(Application.scala:383) [play_2.10.jar:2.1.0]
-	at play.core.server.netty.PlayDefaultUpstreamHandler$$anon$2$$anonfun$handle$1.apply(PlayDefaultUpstreamHandler.scala:132) [play_2.10.jar:2.1.0]
-	at play.core.server.netty.PlayDefaultUpstreamHandler$$anon$2$$anonfun$handle$1.apply(PlayDefaultUpstreamHandler.scala:128) [play_2.10.jar:2.1.0]
-	at play.api.libs.concurrent.PlayPromise$$anonfun$extend1$1.apply(Promise.scala:113) [play_2.10.jar:2.1.0]
-	at play.api.libs.concurrent.PlayPromise$$anonfun$extend1$1.apply(Promise.scala:113) [play_2.10.jar:2.1.0]
-	at play.api.libs.concurrent.PlayPromise$$anonfun$extend$1$$anonfun$apply$1.apply(Promise.scala:104) [play_2.10.jar:2.1.0]
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) [scala-library.jar:na]
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) [scala-library.jar:na]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895) [na:1.6.0_43]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918) [na:1.6.0_43]
-	at java.lang.Thread.run(Thread.java:680) [na:1.6.0_43]
-com.google.code.morphia.query.ValidationException: The field 'state' could not be found in 'models.User' while validating - standards.state; if you wish to continue please disable validation.
-	at com.google.code.morphia.mapping.Mapper.validate(Mapper.java:604) ~[morphia-0.99.jar:na]
-	at com.google.code.morphia.query.FieldCriteria.<init>(FieldCriteria.java:30) ~[morphia-0.99.jar:na]
-	at com.google.code.morphia.query.QueryImpl.filter(QueryImpl.java:317) ~[morphia-0.99.jar:na]
-	at com.google.code.morphia.DatastoreImpl.find(DatastoreImpl.java:401) ~[morphia-0.99.jar:na]
-	at models.User.findAllUsers(User.java:96) ~[na:na]
-	at controllers.Application.findAllUsers(Application.java:24) ~[na:na]
-	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$12$$anonfun$apply$12.apply(routes_routing.scala:185) ~[na:na]
-	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$12$$anonfun$apply$12.apply(routes_routing.scala:185) ~[na:na]
-	at play.core.Router$HandlerInvoker$$anon$6$$anon$2.invocation(Router.scala:141) ~[play_2.10.jar:2.1.0]
-	at play.core.Router$Routes$$anon$1.invocation(Router.scala:322) ~[play_2.10.jar:2.1.0]
-	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:31) ~[play_2.10.jar:2.1.0]
-	at play.GlobalSettings$1.call(GlobalSettings.java:63) ~[play_2.10.jar:2.1.0]
-	at play.core.j.JavaAction$$anon$2.apply(JavaAction.scala:74) ~[play_2.10.jar:2.1.0]
-	at play.core.j.JavaAction$$anon$2.apply(JavaAction.scala:73) ~[play_2.10.jar:2.1.0]
-	at play.libs.F$Promise$PromiseActor.onReceive(F.java:420) ~[play_2.10.jar:2.1.0]
-	at akka.actor.UntypedActor$$anonfun$receive$1.applyOrElse(UntypedActor.scala:159) ~[akka-actor_2.10.jar:na]
-	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:425) ~[akka-actor_2.10.jar:na]
-	at akka.actor.ActorCell.invoke(ActorCell.scala:386) ~[akka-actor_2.10.jar:na]
-	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:230) ~[akka-actor_2.10.jar:na]
-	at akka.dispatch.Mailbox.run(Mailbox.scala:212) ~[akka-actor_2.10.jar:na]
-	at akka.dispatch.ForkJoinExecutorConfigurator$MailboxExecutionTask.exec(AbstractDispatcher.scala:502) ~[akka-actor_2.10.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:262) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:975) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1478) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:104) ~[scala-library.jar:na]
-
-2013-06-08 12:56:48,455 - [ERROR] - from application in play-internal-execution-context-1 
-
-
-! @6eh4g4483 - Internal server error, for (GET) [/filegroup] ->
-
-play.api.Application$$anon$1: Execution exception[[ValidationException: The field 'state' could not be found in 'models.FileGroup' while validating - standards.state; if you wish to continue please disable validation.]]
-	at play.api.Application$class.handleError(Application.scala:289) ~[play_2.10.jar:2.1.0]
-	at play.api.DefaultApplication.handleError(Application.scala:383) [play_2.10.jar:2.1.0]
-	at play.core.server.netty.PlayDefaultUpstreamHandler$$anon$2$$anonfun$handle$1.apply(PlayDefaultUpstreamHandler.scala:132) [play_2.10.jar:2.1.0]
-	at play.core.server.netty.PlayDefaultUpstreamHandler$$anon$2$$anonfun$handle$1.apply(PlayDefaultUpstreamHandler.scala:128) [play_2.10.jar:2.1.0]
-	at play.api.libs.concurrent.PlayPromise$$anonfun$extend1$1.apply(Promise.scala:113) [play_2.10.jar:2.1.0]
-	at play.api.libs.concurrent.PlayPromise$$anonfun$extend1$1.apply(Promise.scala:113) [play_2.10.jar:2.1.0]
-	at play.api.libs.concurrent.PlayPromise$$anonfun$extend$1$$anonfun$apply$1.apply(Promise.scala:104) [play_2.10.jar:2.1.0]
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) [scala-library.jar:na]
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) [scala-library.jar:na]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895) [na:1.6.0_43]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918) [na:1.6.0_43]
-	at java.lang.Thread.run(Thread.java:680) [na:1.6.0_43]
-com.google.code.morphia.query.ValidationException: The field 'state' could not be found in 'models.FileGroup' while validating - standards.state; if you wish to continue please disable validation.
-	at com.google.code.morphia.mapping.Mapper.validate(Mapper.java:604) ~[morphia-0.99.jar:na]
-	at com.google.code.morphia.query.FieldCriteria.<init>(FieldCriteria.java:30) ~[morphia-0.99.jar:na]
-	at com.google.code.morphia.query.QueryImpl.filter(QueryImpl.java:317) ~[morphia-0.99.jar:na]
-	at com.google.code.morphia.DatastoreImpl.find(DatastoreImpl.java:401) ~[morphia-0.99.jar:na]
-	at models.FileGroup.findAllFileGroups(FileGroup.java:122) ~[na:na]
-	at controllers.Application.findAllFileGroups(Application.java:30) ~[na:na]
-	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$13$$anonfun$apply$13.apply(routes_routing.scala:193) ~[na:na]
-	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$13$$anonfun$apply$13.apply(routes_routing.scala:193) ~[na:na]
-	at play.core.Router$HandlerInvoker$$anon$6$$anon$2.invocation(Router.scala:141) ~[play_2.10.jar:2.1.0]
-	at play.core.Router$Routes$$anon$1.invocation(Router.scala:322) ~[play_2.10.jar:2.1.0]
-	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:31) ~[play_2.10.jar:2.1.0]
-	at play.GlobalSettings$1.call(GlobalSettings.java:63) ~[play_2.10.jar:2.1.0]
-	at play.core.j.JavaAction$$anon$2.apply(JavaAction.scala:74) ~[play_2.10.jar:2.1.0]
-	at play.core.j.JavaAction$$anon$2.apply(JavaAction.scala:73) ~[play_2.10.jar:2.1.0]
-	at play.libs.F$Promise$PromiseActor.onReceive(F.java:420) ~[play_2.10.jar:2.1.0]
-	at akka.actor.UntypedActor$$anonfun$receive$1.applyOrElse(UntypedActor.scala:159) ~[akka-actor_2.10.jar:na]
-	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:425) ~[akka-actor_2.10.jar:na]
-	at akka.actor.ActorCell.invoke(ActorCell.scala:386) ~[akka-actor_2.10.jar:na]
-	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:230) ~[akka-actor_2.10.jar:na]
-	at akka.dispatch.Mailbox.run(Mailbox.scala:212) ~[akka-actor_2.10.jar:na]
-	at akka.dispatch.ForkJoinExecutorConfigurator$MailboxExecutionTask.exec(AbstractDispatcher.scala:502) ~[akka-actor_2.10.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:262) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:975) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1478) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:104) ~[scala-library.jar:na]
-
-2013-06-08 12:56:59,995 - [ERROR] - from application in play-internal-execution-context-1 
-
-
-! @6eh4g4l9p - Internal server error, for (GET) [/filegroup] ->
-
-play.api.Application$$anon$1: Execution exception[[ValidationException: The field 'state' could not be found in 'models.FileGroup' while validating - standards.state; if you wish to continue please disable validation.]]
-	at play.api.Application$class.handleError(Application.scala:289) ~[play_2.10.jar:2.1.0]
-	at play.api.DefaultApplication.handleError(Application.scala:383) [play_2.10.jar:2.1.0]
-	at play.core.server.netty.PlayDefaultUpstreamHandler$$anon$2$$anonfun$handle$1.apply(PlayDefaultUpstreamHandler.scala:132) [play_2.10.jar:2.1.0]
-	at play.core.server.netty.PlayDefaultUpstreamHandler$$anon$2$$anonfun$handle$1.apply(PlayDefaultUpstreamHandler.scala:128) [play_2.10.jar:2.1.0]
-	at play.api.libs.concurrent.PlayPromise$$anonfun$extend1$1.apply(Promise.scala:113) [play_2.10.jar:2.1.0]
-	at play.api.libs.concurrent.PlayPromise$$anonfun$extend1$1.apply(Promise.scala:113) [play_2.10.jar:2.1.0]
-	at play.api.libs.concurrent.PlayPromise$$anonfun$extend$1$$anonfun$apply$1.apply(Promise.scala:104) [play_2.10.jar:2.1.0]
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) [scala-library.jar:na]
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) [scala-library.jar:na]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895) [na:1.6.0_43]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918) [na:1.6.0_43]
-	at java.lang.Thread.run(Thread.java:680) [na:1.6.0_43]
-com.google.code.morphia.query.ValidationException: The field 'state' could not be found in 'models.FileGroup' while validating - standards.state; if you wish to continue please disable validation.
-	at com.google.code.morphia.mapping.Mapper.validate(Mapper.java:604) ~[morphia-0.99.jar:na]
-	at com.google.code.morphia.query.FieldCriteria.<init>(FieldCriteria.java:30) ~[morphia-0.99.jar:na]
-	at com.google.code.morphia.query.QueryImpl.filter(QueryImpl.java:317) ~[morphia-0.99.jar:na]
-	at com.google.code.morphia.DatastoreImpl.find(DatastoreImpl.java:401) ~[morphia-0.99.jar:na]
-	at models.FileGroup.findAllFileGroups(FileGroup.java:122) ~[na:na]
-	at controllers.Application.findAllFileGroups(Application.java:30) ~[na:na]
-	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$13$$anonfun$apply$13.apply(routes_routing.scala:193) ~[na:na]
-	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$13$$anonfun$apply$13.apply(routes_routing.scala:193) ~[na:na]
-	at play.core.Router$HandlerInvoker$$anon$6$$anon$2.invocation(Router.scala:141) ~[play_2.10.jar:2.1.0]
-	at play.core.Router$Routes$$anon$1.invocation(Router.scala:322) ~[play_2.10.jar:2.1.0]
-	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:31) ~[play_2.10.jar:2.1.0]
-	at play.GlobalSettings$1.call(GlobalSettings.java:63) ~[play_2.10.jar:2.1.0]
-	at play.core.j.JavaAction$$anon$2.apply(JavaAction.scala:74) ~[play_2.10.jar:2.1.0]
-	at play.core.j.JavaAction$$anon$2.apply(JavaAction.scala:73) ~[play_2.10.jar:2.1.0]
-	at play.libs.F$Promise$PromiseActor.onReceive(F.java:420) ~[play_2.10.jar:2.1.0]
-	at akka.actor.UntypedActor$$anonfun$receive$1.applyOrElse(UntypedActor.scala:159) ~[akka-actor_2.10.jar:na]
-	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:425) ~[akka-actor_2.10.jar:na]
-	at akka.actor.ActorCell.invoke(ActorCell.scala:386) ~[akka-actor_2.10.jar:na]
-	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:230) ~[akka-actor_2.10.jar:na]
-	at akka.dispatch.Mailbox.run(Mailbox.scala:212) ~[akka-actor_2.10.jar:na]
-	at akka.dispatch.ForkJoinExecutorConfigurator$MailboxExecutionTask.exec(AbstractDispatcher.scala:502) ~[akka-actor_2.10.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:262) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:975) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1478) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:104) ~[scala-library.jar:na]
-
-2013-06-08 12:56:59,999 - [ERROR] - from application in play-internal-execution-context-2 
-
-
-! @6eh4g4l97 - Internal server error, for (GET) [/user] ->
-
-play.api.Application$$anon$1: Execution exception[[ValidationException: The field 'state' could not be found in 'models.User' while validating - standards.state; if you wish to continue please disable validation.]]
-	at play.api.Application$class.handleError(Application.scala:289) ~[play_2.10.jar:2.1.0]
-	at play.api.DefaultApplication.handleError(Application.scala:383) [play_2.10.jar:2.1.0]
-	at play.core.server.netty.PlayDefaultUpstreamHandler$$anon$2$$anonfun$handle$1.apply(PlayDefaultUpstreamHandler.scala:132) [play_2.10.jar:2.1.0]
-	at play.core.server.netty.PlayDefaultUpstreamHandler$$anon$2$$anonfun$handle$1.apply(PlayDefaultUpstreamHandler.scala:128) [play_2.10.jar:2.1.0]
-	at play.api.libs.concurrent.PlayPromise$$anonfun$extend1$1.apply(Promise.scala:113) [play_2.10.jar:2.1.0]
-	at play.api.libs.concurrent.PlayPromise$$anonfun$extend1$1.apply(Promise.scala:113) [play_2.10.jar:2.1.0]
-	at play.api.libs.concurrent.PlayPromise$$anonfun$extend$1$$anonfun$apply$1.apply(Promise.scala:104) [play_2.10.jar:2.1.0]
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) [scala-library.jar:na]
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) [scala-library.jar:na]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895) [na:1.6.0_43]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918) [na:1.6.0_43]
-	at java.lang.Thread.run(Thread.java:680) [na:1.6.0_43]
-com.google.code.morphia.query.ValidationException: The field 'state' could not be found in 'models.User' while validating - standards.state; if you wish to continue please disable validation.
-	at com.google.code.morphia.mapping.Mapper.validate(Mapper.java:604) ~[morphia-0.99.jar:na]
-	at com.google.code.morphia.query.FieldCriteria.<init>(FieldCriteria.java:30) ~[morphia-0.99.jar:na]
-	at com.google.code.morphia.query.QueryImpl.filter(QueryImpl.java:317) ~[morphia-0.99.jar:na]
-	at com.google.code.morphia.DatastoreImpl.find(DatastoreImpl.java:401) ~[morphia-0.99.jar:na]
-	at models.User.findAllUsers(User.java:96) ~[na:na]
-	at controllers.Application.findAllUsers(Application.java:24) ~[na:na]
-	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$12$$anonfun$apply$12.apply(routes_routing.scala:185) ~[na:na]
-	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$12$$anonfun$apply$12.apply(routes_routing.scala:185) ~[na:na]
-	at play.core.Router$HandlerInvoker$$anon$6$$anon$2.invocation(Router.scala:141) ~[play_2.10.jar:2.1.0]
-	at play.core.Router$Routes$$anon$1.invocation(Router.scala:322) ~[play_2.10.jar:2.1.0]
-	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:31) ~[play_2.10.jar:2.1.0]
-	at play.GlobalSettings$1.call(GlobalSettings.java:63) ~[play_2.10.jar:2.1.0]
-	at play.core.j.JavaAction$$anon$2.apply(JavaAction.scala:74) ~[play_2.10.jar:2.1.0]
-	at play.core.j.JavaAction$$anon$2.apply(JavaAction.scala:73) ~[play_2.10.jar:2.1.0]
-	at play.libs.F$Promise$PromiseActor.onReceive(F.java:420) ~[play_2.10.jar:2.1.0]
-	at akka.actor.UntypedActor$$anonfun$receive$1.applyOrElse(UntypedActor.scala:159) ~[akka-actor_2.10.jar:na]
-	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:425) ~[akka-actor_2.10.jar:na]
-	at akka.actor.ActorCell.invoke(ActorCell.scala:386) ~[akka-actor_2.10.jar:na]
-	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:230) ~[akka-actor_2.10.jar:na]
-	at akka.dispatch.Mailbox.run(Mailbox.scala:212) ~[akka-actor_2.10.jar:na]
-	at akka.dispatch.ForkJoinExecutorConfigurator$MailboxExecutionTask.exec(AbstractDispatcher.scala:502) ~[akka-actor_2.10.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:262) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:975) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1478) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:104) ~[scala-library.jar:na]
-
-2013-06-08 12:57:28,473 - [ERROR] - from application in play-internal-execution-context-2 
-
-
-! @6eh4g6bco - Internal server error, for (GET) [/user] ->
-
-play.api.Application$$anon$1: Execution exception[[ValidationException: The field 'state' could not be found in 'models.User' while validating - standards.state; if you wish to continue please disable validation.]]
-	at play.api.Application$class.handleError(Application.scala:289) ~[play_2.10.jar:2.1.0]
-	at play.api.DefaultApplication.handleError(Application.scala:383) [play_2.10.jar:2.1.0]
-	at play.core.server.netty.PlayDefaultUpstreamHandler$$anon$2$$anonfun$handle$1.apply(PlayDefaultUpstreamHandler.scala:132) [play_2.10.jar:2.1.0]
-	at play.core.server.netty.PlayDefaultUpstreamHandler$$anon$2$$anonfun$handle$1.apply(PlayDefaultUpstreamHandler.scala:128) [play_2.10.jar:2.1.0]
-	at play.api.libs.concurrent.PlayPromise$$anonfun$extend1$1.apply(Promise.scala:113) [play_2.10.jar:2.1.0]
-	at play.api.libs.concurrent.PlayPromise$$anonfun$extend1$1.apply(Promise.scala:113) [play_2.10.jar:2.1.0]
-	at play.api.libs.concurrent.PlayPromise$$anonfun$extend$1$$anonfun$apply$1.apply(Promise.scala:104) [play_2.10.jar:2.1.0]
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) [scala-library.jar:na]
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) [scala-library.jar:na]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895) [na:1.6.0_43]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918) [na:1.6.0_43]
-	at java.lang.Thread.run(Thread.java:680) [na:1.6.0_43]
-com.google.code.morphia.query.ValidationException: The field 'state' could not be found in 'models.User' while validating - standards.state; if you wish to continue please disable validation.
-	at com.google.code.morphia.mapping.Mapper.validate(Mapper.java:604) ~[morphia-0.99.jar:na]
-	at com.google.code.morphia.query.FieldCriteria.<init>(FieldCriteria.java:30) ~[morphia-0.99.jar:na]
-	at com.google.code.morphia.query.QueryImpl.filter(QueryImpl.java:317) ~[morphia-0.99.jar:na]
-	at com.google.code.morphia.DatastoreImpl.find(DatastoreImpl.java:401) ~[morphia-0.99.jar:na]
-	at models.User.findAllUsers(User.java:96) ~[na:na]
-	at controllers.Application.findAllUsers(Application.java:24) ~[na:na]
-	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$12$$anonfun$apply$12.apply(routes_routing.scala:185) ~[na:na]
-	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$12$$anonfun$apply$12.apply(routes_routing.scala:185) ~[na:na]
-	at play.core.Router$HandlerInvoker$$anon$6$$anon$2.invocation(Router.scala:141) ~[play_2.10.jar:2.1.0]
-	at play.core.Router$Routes$$anon$1.invocation(Router.scala:322) ~[play_2.10.jar:2.1.0]
-	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:31) ~[play_2.10.jar:2.1.0]
-	at play.GlobalSettings$1.call(GlobalSettings.java:63) ~[play_2.10.jar:2.1.0]
-	at play.core.j.JavaAction$$anon$2.apply(JavaAction.scala:74) ~[play_2.10.jar:2.1.0]
-	at play.core.j.JavaAction$$anon$2.apply(JavaAction.scala:73) ~[play_2.10.jar:2.1.0]
-	at play.libs.F$Promise$PromiseActor.onReceive(F.java:420) ~[play_2.10.jar:2.1.0]
-	at akka.actor.UntypedActor$$anonfun$receive$1.applyOrElse(UntypedActor.scala:159) ~[akka-actor_2.10.jar:na]
-	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:425) ~[akka-actor_2.10.jar:na]
-	at akka.actor.ActorCell.invoke(ActorCell.scala:386) ~[akka-actor_2.10.jar:na]
-	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:230) ~[akka-actor_2.10.jar:na]
-	at akka.dispatch.Mailbox.run(Mailbox.scala:212) ~[akka-actor_2.10.jar:na]
-	at akka.dispatch.ForkJoinExecutorConfigurator$MailboxExecutionTask.exec(AbstractDispatcher.scala:502) ~[akka-actor_2.10.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:262) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:975) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1478) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:104) ~[scala-library.jar:na]
-
-2013-06-08 12:57:28,529 - [ERROR] - from application in play-internal-execution-context-1 
-
-
-! @6eh4g6bfe - Internal server error, for (GET) [/filegroup] ->
-
-play.api.Application$$anon$1: Execution exception[[ValidationException: The field 'state' could not be found in 'models.FileGroup' while validating - standards.state; if you wish to continue please disable validation.]]
-	at play.api.Application$class.handleError(Application.scala:289) ~[play_2.10.jar:2.1.0]
-	at play.api.DefaultApplication.handleError(Application.scala:383) [play_2.10.jar:2.1.0]
-	at play.core.server.netty.PlayDefaultUpstreamHandler$$anon$2$$anonfun$handle$1.apply(PlayDefaultUpstreamHandler.scala:132) [play_2.10.jar:2.1.0]
-	at play.core.server.netty.PlayDefaultUpstreamHandler$$anon$2$$anonfun$handle$1.apply(PlayDefaultUpstreamHandler.scala:128) [play_2.10.jar:2.1.0]
-	at play.api.libs.concurrent.PlayPromise$$anonfun$extend1$1.apply(Promise.scala:113) [play_2.10.jar:2.1.0]
-	at play.api.libs.concurrent.PlayPromise$$anonfun$extend1$1.apply(Promise.scala:113) [play_2.10.jar:2.1.0]
-	at play.api.libs.concurrent.PlayPromise$$anonfun$extend$1$$anonfun$apply$1.apply(Promise.scala:104) [play_2.10.jar:2.1.0]
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) [scala-library.jar:na]
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) [scala-library.jar:na]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895) [na:1.6.0_43]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918) [na:1.6.0_43]
-	at java.lang.Thread.run(Thread.java:680) [na:1.6.0_43]
-com.google.code.morphia.query.ValidationException: The field 'state' could not be found in 'models.FileGroup' while validating - standards.state; if you wish to continue please disable validation.
-	at com.google.code.morphia.mapping.Mapper.validate(Mapper.java:604) ~[morphia-0.99.jar:na]
-	at com.google.code.morphia.query.FieldCriteria.<init>(FieldCriteria.java:30) ~[morphia-0.99.jar:na]
-	at com.google.code.morphia.query.QueryImpl.filter(QueryImpl.java:317) ~[morphia-0.99.jar:na]
-	at com.google.code.morphia.DatastoreImpl.find(DatastoreImpl.java:401) ~[morphia-0.99.jar:na]
-	at models.FileGroup.findAllFileGroups(FileGroup.java:122) ~[na:na]
-	at controllers.Application.findAllFileGroups(Application.java:30) ~[na:na]
-	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$13$$anonfun$apply$13.apply(routes_routing.scala:193) ~[na:na]
-	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$13$$anonfun$apply$13.apply(routes_routing.scala:193) ~[na:na]
-	at play.core.Router$HandlerInvoker$$anon$6$$anon$2.invocation(Router.scala:141) ~[play_2.10.jar:2.1.0]
-	at play.core.Router$Routes$$anon$1.invocation(Router.scala:322) ~[play_2.10.jar:2.1.0]
-	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:31) ~[play_2.10.jar:2.1.0]
-	at play.GlobalSettings$1.call(GlobalSettings.java:63) ~[play_2.10.jar:2.1.0]
-	at play.core.j.JavaAction$$anon$2.apply(JavaAction.scala:74) ~[play_2.10.jar:2.1.0]
-	at play.core.j.JavaAction$$anon$2.apply(JavaAction.scala:73) ~[play_2.10.jar:2.1.0]
-	at play.libs.F$Promise$PromiseActor.onReceive(F.java:420) ~[play_2.10.jar:2.1.0]
-	at akka.actor.UntypedActor$$anonfun$receive$1.applyOrElse(UntypedActor.scala:159) ~[akka-actor_2.10.jar:na]
-	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:425) ~[akka-actor_2.10.jar:na]
-	at akka.actor.ActorCell.invoke(ActorCell.scala:386) ~[akka-actor_2.10.jar:na]
-	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:230) ~[akka-actor_2.10.jar:na]
-	at akka.dispatch.Mailbox.run(Mailbox.scala:212) ~[akka-actor_2.10.jar:na]
-	at akka.dispatch.ForkJoinExecutorConfigurator$MailboxExecutionTask.exec(AbstractDispatcher.scala:502) ~[akka-actor_2.10.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:262) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:975) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1478) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:104) ~[scala-library.jar:na]
-
-2013-06-08 12:57:59,751 - [ERROR] - from application in play-internal-execution-context-2 
-
-
-! @6eh4g85k2 - Internal server error, for (GET) [/user] ->
-
-play.api.Application$$anon$1: Execution exception[[ValidationException: The field 'state' could not be found in 'models.User' while validating - standards.state; if you wish to continue please disable validation.]]
-	at play.api.Application$class.handleError(Application.scala:289) ~[play_2.10.jar:2.1.0]
-	at play.api.DefaultApplication.handleError(Application.scala:383) [play_2.10.jar:2.1.0]
-	at play.core.server.netty.PlayDefaultUpstreamHandler$$anon$2$$anonfun$handle$1.apply(PlayDefaultUpstreamHandler.scala:132) [play_2.10.jar:2.1.0]
-	at play.core.server.netty.PlayDefaultUpstreamHandler$$anon$2$$anonfun$handle$1.apply(PlayDefaultUpstreamHandler.scala:128) [play_2.10.jar:2.1.0]
-	at play.api.libs.concurrent.PlayPromise$$anonfun$extend1$1.apply(Promise.scala:113) [play_2.10.jar:2.1.0]
-	at play.api.libs.concurrent.PlayPromise$$anonfun$extend1$1.apply(Promise.scala:113) [play_2.10.jar:2.1.0]
-	at play.api.libs.concurrent.PlayPromise$$anonfun$extend$1$$anonfun$apply$1.apply(Promise.scala:104) [play_2.10.jar:2.1.0]
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) [scala-library.jar:na]
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) [scala-library.jar:na]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895) [na:1.6.0_43]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918) [na:1.6.0_43]
-	at java.lang.Thread.run(Thread.java:680) [na:1.6.0_43]
-com.google.code.morphia.query.ValidationException: The field 'state' could not be found in 'models.User' while validating - standards.state; if you wish to continue please disable validation.
-	at com.google.code.morphia.mapping.Mapper.validate(Mapper.java:604) ~[morphia-0.99.jar:na]
-	at com.google.code.morphia.query.FieldCriteria.<init>(FieldCriteria.java:30) ~[morphia-0.99.jar:na]
-	at com.google.code.morphia.query.QueryImpl.filter(QueryImpl.java:317) ~[morphia-0.99.jar:na]
-	at com.google.code.morphia.DatastoreImpl.find(DatastoreImpl.java:401) ~[morphia-0.99.jar:na]
-	at models.User.findAllUsers(User.java:96) ~[na:na]
-	at controllers.Application.findAllUsers(Application.java:24) ~[na:na]
-	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$12$$anonfun$apply$12.apply(routes_routing.scala:185) ~[na:na]
-	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$12$$anonfun$apply$12.apply(routes_routing.scala:185) ~[na:na]
-	at play.core.Router$HandlerInvoker$$anon$6$$anon$2.invocation(Router.scala:141) ~[play_2.10.jar:2.1.0]
-	at play.core.Router$Routes$$anon$1.invocation(Router.scala:322) ~[play_2.10.jar:2.1.0]
-	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:31) ~[play_2.10.jar:2.1.0]
-	at play.GlobalSettings$1.call(GlobalSettings.java:63) ~[play_2.10.jar:2.1.0]
-	at play.core.j.JavaAction$$anon$2.apply(JavaAction.scala:74) ~[play_2.10.jar:2.1.0]
-	at play.core.j.JavaAction$$anon$2.apply(JavaAction.scala:73) ~[play_2.10.jar:2.1.0]
-	at play.libs.F$Promise$PromiseActor.onReceive(F.java:420) ~[play_2.10.jar:2.1.0]
-	at akka.actor.UntypedActor$$anonfun$receive$1.applyOrElse(UntypedActor.scala:159) ~[akka-actor_2.10.jar:na]
-	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:425) ~[akka-actor_2.10.jar:na]
-	at akka.actor.ActorCell.invoke(ActorCell.scala:386) ~[akka-actor_2.10.jar:na]
-	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:230) ~[akka-actor_2.10.jar:na]
-	at akka.dispatch.Mailbox.run(Mailbox.scala:212) ~[akka-actor_2.10.jar:na]
-	at akka.dispatch.ForkJoinExecutorConfigurator$MailboxExecutionTask.exec(AbstractDispatcher.scala:502) ~[akka-actor_2.10.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:262) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:975) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1478) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:104) ~[scala-library.jar:na]
-
-2013-06-08 12:57:59,756 - [ERROR] - from application in play-internal-execution-context-1 
-
-
-! @6eh4g85k8 - Internal server error, for (GET) [/filegroup] ->
-
-play.api.Application$$anon$1: Execution exception[[ValidationException: The field 'state' could not be found in 'models.FileGroup' while validating - standards.state; if you wish to continue please disable validation.]]
-	at play.api.Application$class.handleError(Application.scala:289) ~[play_2.10.jar:2.1.0]
-	at play.api.DefaultApplication.handleError(Application.scala:383) [play_2.10.jar:2.1.0]
-	at play.core.server.netty.PlayDefaultUpstreamHandler$$anon$2$$anonfun$handle$1.apply(PlayDefaultUpstreamHandler.scala:132) [play_2.10.jar:2.1.0]
-	at play.core.server.netty.PlayDefaultUpstreamHandler$$anon$2$$anonfun$handle$1.apply(PlayDefaultUpstreamHandler.scala:128) [play_2.10.jar:2.1.0]
-	at play.api.libs.concurrent.PlayPromise$$anonfun$extend1$1.apply(Promise.scala:113) [play_2.10.jar:2.1.0]
-	at play.api.libs.concurrent.PlayPromise$$anonfun$extend1$1.apply(Promise.scala:113) [play_2.10.jar:2.1.0]
-	at play.api.libs.concurrent.PlayPromise$$anonfun$extend$1$$anonfun$apply$1.apply(Promise.scala:104) [play_2.10.jar:2.1.0]
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) [scala-library.jar:na]
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) [scala-library.jar:na]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895) [na:1.6.0_43]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918) [na:1.6.0_43]
-	at java.lang.Thread.run(Thread.java:680) [na:1.6.0_43]
-com.google.code.morphia.query.ValidationException: The field 'state' could not be found in 'models.FileGroup' while validating - standards.state; if you wish to continue please disable validation.
-	at com.google.code.morphia.mapping.Mapper.validate(Mapper.java:604) ~[morphia-0.99.jar:na]
-	at com.google.code.morphia.query.FieldCriteria.<init>(FieldCriteria.java:30) ~[morphia-0.99.jar:na]
-	at com.google.code.morphia.query.QueryImpl.filter(QueryImpl.java:317) ~[morphia-0.99.jar:na]
-	at com.google.code.morphia.DatastoreImpl.find(DatastoreImpl.java:401) ~[morphia-0.99.jar:na]
-	at models.FileGroup.findAllFileGroups(FileGroup.java:122) ~[na:na]
-	at controllers.Application.findAllFileGroups(Application.java:30) ~[na:na]
-	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$13$$anonfun$apply$13.apply(routes_routing.scala:193) ~[na:na]
-	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$13$$anonfun$apply$13.apply(routes_routing.scala:193) ~[na:na]
-	at play.core.Router$HandlerInvoker$$anon$6$$anon$2.invocation(Router.scala:141) ~[play_2.10.jar:2.1.0]
-	at play.core.Router$Routes$$anon$1.invocation(Router.scala:322) ~[play_2.10.jar:2.1.0]
-	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:31) ~[play_2.10.jar:2.1.0]
-	at play.GlobalSettings$1.call(GlobalSettings.java:63) ~[play_2.10.jar:2.1.0]
-	at play.core.j.JavaAction$$anon$2.apply(JavaAction.scala:74) ~[play_2.10.jar:2.1.0]
-	at play.core.j.JavaAction$$anon$2.apply(JavaAction.scala:73) ~[play_2.10.jar:2.1.0]
-	at play.libs.F$Promise$PromiseActor.onReceive(F.java:420) ~[play_2.10.jar:2.1.0]
-	at akka.actor.UntypedActor$$anonfun$receive$1.applyOrElse(UntypedActor.scala:159) ~[akka-actor_2.10.jar:na]
-	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:425) ~[akka-actor_2.10.jar:na]
-	at akka.actor.ActorCell.invoke(ActorCell.scala:386) ~[akka-actor_2.10.jar:na]
-	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:230) ~[akka-actor_2.10.jar:na]
-	at akka.dispatch.Mailbox.run(Mailbox.scala:212) ~[akka-actor_2.10.jar:na]
-	at akka.dispatch.ForkJoinExecutorConfigurator$MailboxExecutionTask.exec(AbstractDispatcher.scala:502) ~[akka-actor_2.10.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:262) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:975) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1478) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:104) ~[scala-library.jar:na]
-
-2013-06-08 12:58:23,899 - [ERROR] - from application in play-internal-execution-context-2 
-
-
-! @6eh4g9fco - Internal server error, for (GET) [/filegroup] ->
-
-play.api.Application$$anon$1: Execution exception[[ValidationException: The field 'state' could not be found in 'models.FileGroup' while validating - standards.state; if you wish to continue please disable validation.]]
-	at play.api.Application$class.handleError(Application.scala:289) ~[play_2.10.jar:2.1.0]
-	at play.api.DefaultApplication.handleError(Application.scala:383) [play_2.10.jar:2.1.0]
-	at play.core.server.netty.PlayDefaultUpstreamHandler$$anon$2$$anonfun$handle$1.apply(PlayDefaultUpstreamHandler.scala:132) [play_2.10.jar:2.1.0]
-	at play.core.server.netty.PlayDefaultUpstreamHandler$$anon$2$$anonfun$handle$1.apply(PlayDefaultUpstreamHandler.scala:128) [play_2.10.jar:2.1.0]
-	at play.api.libs.concurrent.PlayPromise$$anonfun$extend1$1.apply(Promise.scala:113) [play_2.10.jar:2.1.0]
-	at play.api.libs.concurrent.PlayPromise$$anonfun$extend1$1.apply(Promise.scala:113) [play_2.10.jar:2.1.0]
-	at play.api.libs.concurrent.PlayPromise$$anonfun$extend$1$$anonfun$apply$1.apply(Promise.scala:104) [play_2.10.jar:2.1.0]
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) [scala-library.jar:na]
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) [scala-library.jar:na]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895) [na:1.6.0_43]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918) [na:1.6.0_43]
-	at java.lang.Thread.run(Thread.java:680) [na:1.6.0_43]
-com.google.code.morphia.query.ValidationException: The field 'state' could not be found in 'models.FileGroup' while validating - standards.state; if you wish to continue please disable validation.
-	at com.google.code.morphia.mapping.Mapper.validate(Mapper.java:604) ~[morphia-0.99.jar:na]
-	at com.google.code.morphia.query.FieldCriteria.<init>(FieldCriteria.java:30) ~[morphia-0.99.jar:na]
-	at com.google.code.morphia.query.QueryImpl.filter(QueryImpl.java:317) ~[morphia-0.99.jar:na]
-	at com.google.code.morphia.DatastoreImpl.find(DatastoreImpl.java:401) ~[morphia-0.99.jar:na]
-	at models.FileGroup.findAllFileGroups(FileGroup.java:122) ~[na:na]
-	at controllers.Application.findAllFileGroups(Application.java:30) ~[na:na]
-	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$13$$anonfun$apply$13.apply(routes_routing.scala:193) ~[na:na]
-	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$13$$anonfun$apply$13.apply(routes_routing.scala:193) ~[na:na]
-	at play.core.Router$HandlerInvoker$$anon$6$$anon$2.invocation(Router.scala:141) ~[play_2.10.jar:2.1.0]
-	at play.core.Router$Routes$$anon$1.invocation(Router.scala:322) ~[play_2.10.jar:2.1.0]
-	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:31) ~[play_2.10.jar:2.1.0]
-	at play.GlobalSettings$1.call(GlobalSettings.java:63) ~[play_2.10.jar:2.1.0]
-	at play.core.j.JavaAction$$anon$2.apply(JavaAction.scala:74) ~[play_2.10.jar:2.1.0]
-	at play.core.j.JavaAction$$anon$2.apply(JavaAction.scala:73) ~[play_2.10.jar:2.1.0]
-	at play.libs.F$Promise$PromiseActor.onReceive(F.java:420) ~[play_2.10.jar:2.1.0]
-	at akka.actor.UntypedActor$$anonfun$receive$1.applyOrElse(UntypedActor.scala:159) ~[akka-actor_2.10.jar:na]
-	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:425) ~[akka-actor_2.10.jar:na]
-	at akka.actor.ActorCell.invoke(ActorCell.scala:386) ~[akka-actor_2.10.jar:na]
-	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:230) ~[akka-actor_2.10.jar:na]
-	at akka.dispatch.Mailbox.run(Mailbox.scala:212) ~[akka-actor_2.10.jar:na]
-	at akka.dispatch.ForkJoinExecutorConfigurator$MailboxExecutionTask.exec(AbstractDispatcher.scala:502) ~[akka-actor_2.10.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:262) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:975) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1478) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:104) ~[scala-library.jar:na]
-
-2013-06-08 12:58:23,901 - [ERROR] - from application in play-internal-execution-context-1 
-
-
-! @6eh4g9fd4 - Internal server error, for (GET) [/user] ->
-
-play.api.Application$$anon$1: Execution exception[[ValidationException: The field 'state' could not be found in 'models.User' while validating - standards.state; if you wish to continue please disable validation.]]
-	at play.api.Application$class.handleError(Application.scala:289) ~[play_2.10.jar:2.1.0]
-	at play.api.DefaultApplication.handleError(Application.scala:383) [play_2.10.jar:2.1.0]
-	at play.core.server.netty.PlayDefaultUpstreamHandler$$anon$2$$anonfun$handle$1.apply(PlayDefaultUpstreamHandler.scala:132) [play_2.10.jar:2.1.0]
-	at play.core.server.netty.PlayDefaultUpstreamHandler$$anon$2$$anonfun$handle$1.apply(PlayDefaultUpstreamHandler.scala:128) [play_2.10.jar:2.1.0]
-	at play.api.libs.concurrent.PlayPromise$$anonfun$extend1$1.apply(Promise.scala:113) [play_2.10.jar:2.1.0]
-	at play.api.libs.concurrent.PlayPromise$$anonfun$extend1$1.apply(Promise.scala:113) [play_2.10.jar:2.1.0]
-	at play.api.libs.concurrent.PlayPromise$$anonfun$extend$1$$anonfun$apply$1.apply(Promise.scala:104) [play_2.10.jar:2.1.0]
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) [scala-library.jar:na]
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) [scala-library.jar:na]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895) [na:1.6.0_43]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918) [na:1.6.0_43]
-	at java.lang.Thread.run(Thread.java:680) [na:1.6.0_43]
-com.google.code.morphia.query.ValidationException: The field 'state' could not be found in 'models.User' while validating - standards.state; if you wish to continue please disable validation.
-	at com.google.code.morphia.mapping.Mapper.validate(Mapper.java:604) ~[morphia-0.99.jar:na]
-	at com.google.code.morphia.query.FieldCriteria.<init>(FieldCriteria.java:30) ~[morphia-0.99.jar:na]
-	at com.google.code.morphia.query.QueryImpl.filter(QueryImpl.java:317) ~[morphia-0.99.jar:na]
-	at com.google.code.morphia.DatastoreImpl.find(DatastoreImpl.java:401) ~[morphia-0.99.jar:na]
-	at models.User.findAllUsers(User.java:96) ~[na:na]
-	at controllers.Application.findAllUsers(Application.java:24) ~[na:na]
-	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$12$$anonfun$apply$12.apply(routes_routing.scala:185) ~[na:na]
-	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$12$$anonfun$apply$12.apply(routes_routing.scala:185) ~[na:na]
-	at play.core.Router$HandlerInvoker$$anon$6$$anon$2.invocation(Router.scala:141) ~[play_2.10.jar:2.1.0]
-	at play.core.Router$Routes$$anon$1.invocation(Router.scala:322) ~[play_2.10.jar:2.1.0]
-	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:31) ~[play_2.10.jar:2.1.0]
-	at play.GlobalSettings$1.call(GlobalSettings.java:63) ~[play_2.10.jar:2.1.0]
-	at play.core.j.JavaAction$$anon$2.apply(JavaAction.scala:74) ~[play_2.10.jar:2.1.0]
-	at play.core.j.JavaAction$$anon$2.apply(JavaAction.scala:73) ~[play_2.10.jar:2.1.0]
-	at play.libs.F$Promise$PromiseActor.onReceive(F.java:420) ~[play_2.10.jar:2.1.0]
-	at akka.actor.UntypedActor$$anonfun$receive$1.applyOrElse(UntypedActor.scala:159) ~[akka-actor_2.10.jar:na]
-	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:425) ~[akka-actor_2.10.jar:na]
-	at akka.actor.ActorCell.invoke(ActorCell.scala:386) ~[akka-actor_2.10.jar:na]
-	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:230) ~[akka-actor_2.10.jar:na]
-	at akka.dispatch.Mailbox.run(Mailbox.scala:212) ~[akka-actor_2.10.jar:na]
-	at akka.dispatch.ForkJoinExecutorConfigurator$MailboxExecutionTask.exec(AbstractDispatcher.scala:502) ~[akka-actor_2.10.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:262) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:975) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1478) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:104) ~[scala-library.jar:na]
-
-2013-06-08 12:58:40,268 - [ERROR] - from application in play-internal-execution-context-1 
-
-
-! @6eh4gadii - Internal server error, for (GET) [/filegroup] ->
-
-play.api.Application$$anon$1: Execution exception[[ValidationException: The field 'state' could not be found in 'models.FileGroup' while validating - standards.state; if you wish to continue please disable validation.]]
-	at play.api.Application$class.handleError(Application.scala:289) ~[play_2.10.jar:2.1.0]
-	at play.api.DefaultApplication.handleError(Application.scala:383) [play_2.10.jar:2.1.0]
-	at play.core.server.netty.PlayDefaultUpstreamHandler$$anon$2$$anonfun$handle$1.apply(PlayDefaultUpstreamHandler.scala:132) [play_2.10.jar:2.1.0]
-	at play.core.server.netty.PlayDefaultUpstreamHandler$$anon$2$$anonfun$handle$1.apply(PlayDefaultUpstreamHandler.scala:128) [play_2.10.jar:2.1.0]
-	at play.api.libs.concurrent.PlayPromise$$anonfun$extend1$1.apply(Promise.scala:113) [play_2.10.jar:2.1.0]
-	at play.api.libs.concurrent.PlayPromise$$anonfun$extend1$1.apply(Promise.scala:113) [play_2.10.jar:2.1.0]
-	at play.api.libs.concurrent.PlayPromise$$anonfun$extend$1$$anonfun$apply$1.apply(Promise.scala:104) [play_2.10.jar:2.1.0]
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) [scala-library.jar:na]
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) [scala-library.jar:na]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895) [na:1.6.0_43]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918) [na:1.6.0_43]
-	at java.lang.Thread.run(Thread.java:680) [na:1.6.0_43]
-com.google.code.morphia.query.ValidationException: The field 'state' could not be found in 'models.FileGroup' while validating - standards.state; if you wish to continue please disable validation.
-	at com.google.code.morphia.mapping.Mapper.validate(Mapper.java:604) ~[morphia-0.99.jar:na]
-	at com.google.code.morphia.query.FieldCriteria.<init>(FieldCriteria.java:30) ~[morphia-0.99.jar:na]
-	at com.google.code.morphia.query.QueryImpl.filter(QueryImpl.java:317) ~[morphia-0.99.jar:na]
-	at com.google.code.morphia.DatastoreImpl.find(DatastoreImpl.java:401) ~[morphia-0.99.jar:na]
-	at models.FileGroup.findAllFileGroups(FileGroup.java:122) ~[na:na]
-	at controllers.Application.findAllFileGroups(Application.java:30) ~[na:na]
-	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$13$$anonfun$apply$13.apply(routes_routing.scala:193) ~[na:na]
-	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$13$$anonfun$apply$13.apply(routes_routing.scala:193) ~[na:na]
-	at play.core.Router$HandlerInvoker$$anon$6$$anon$2.invocation(Router.scala:141) ~[play_2.10.jar:2.1.0]
-	at play.core.Router$Routes$$anon$1.invocation(Router.scala:322) ~[play_2.10.jar:2.1.0]
-	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:31) ~[play_2.10.jar:2.1.0]
-	at play.GlobalSettings$1.call(GlobalSettings.java:63) ~[play_2.10.jar:2.1.0]
-	at play.core.j.JavaAction$$anon$2.apply(JavaAction.scala:74) ~[play_2.10.jar:2.1.0]
-	at play.core.j.JavaAction$$anon$2.apply(JavaAction.scala:73) ~[play_2.10.jar:2.1.0]
-	at play.libs.F$Promise$PromiseActor.onReceive(F.java:420) ~[play_2.10.jar:2.1.0]
-	at akka.actor.UntypedActor$$anonfun$receive$1.applyOrElse(UntypedActor.scala:159) ~[akka-actor_2.10.jar:na]
-	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:425) ~[akka-actor_2.10.jar:na]
-	at akka.actor.ActorCell.invoke(ActorCell.scala:386) ~[akka-actor_2.10.jar:na]
-	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:230) ~[akka-actor_2.10.jar:na]
-	at akka.dispatch.Mailbox.run(Mailbox.scala:212) ~[akka-actor_2.10.jar:na]
-	at akka.dispatch.ForkJoinExecutorConfigurator$MailboxExecutionTask.exec(AbstractDispatcher.scala:502) ~[akka-actor_2.10.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:262) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:975) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1478) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:104) ~[scala-library.jar:na]
-
-2013-06-08 12:58:58,420 - [ERROR] - from application in play-internal-execution-context-2 
-
-
-! @6eh4gbeen - Internal server error, for (GET) [/user] ->
-
-play.api.Application$$anon$1: Execution exception[[ValidationException: The field 'state' could not be found in 'models.User' while validating - standards.state; if you wish to continue please disable validation.]]
-	at play.api.Application$class.handleError(Application.scala:289) ~[play_2.10.jar:2.1.0]
-	at play.api.DefaultApplication.handleError(Application.scala:383) [play_2.10.jar:2.1.0]
-	at play.core.server.netty.PlayDefaultUpstreamHandler$$anon$2$$anonfun$handle$1.apply(PlayDefaultUpstreamHandler.scala:132) [play_2.10.jar:2.1.0]
-	at play.core.server.netty.PlayDefaultUpstreamHandler$$anon$2$$anonfun$handle$1.apply(PlayDefaultUpstreamHandler.scala:128) [play_2.10.jar:2.1.0]
-	at play.api.libs.concurrent.PlayPromise$$anonfun$extend1$1.apply(Promise.scala:113) [play_2.10.jar:2.1.0]
-	at play.api.libs.concurrent.PlayPromise$$anonfun$extend1$1.apply(Promise.scala:113) [play_2.10.jar:2.1.0]
-	at play.api.libs.concurrent.PlayPromise$$anonfun$extend$1$$anonfun$apply$1.apply(Promise.scala:104) [play_2.10.jar:2.1.0]
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) [scala-library.jar:na]
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) [scala-library.jar:na]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895) [na:1.6.0_43]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918) [na:1.6.0_43]
-	at java.lang.Thread.run(Thread.java:680) [na:1.6.0_43]
-com.google.code.morphia.query.ValidationException: The field 'state' could not be found in 'models.User' while validating - standards.state; if you wish to continue please disable validation.
-	at com.google.code.morphia.mapping.Mapper.validate(Mapper.java:604) ~[morphia-0.99.jar:na]
-	at com.google.code.morphia.query.FieldCriteria.<init>(FieldCriteria.java:30) ~[morphia-0.99.jar:na]
-	at com.google.code.morphia.query.QueryImpl.filter(QueryImpl.java:317) ~[morphia-0.99.jar:na]
-	at com.google.code.morphia.DatastoreImpl.find(DatastoreImpl.java:401) ~[morphia-0.99.jar:na]
-	at models.User.findAllUsers(User.java:96) ~[na:na]
-	at controllers.Application.findAllUsers(Application.java:24) ~[na:na]
-	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$12$$anonfun$apply$12.apply(routes_routing.scala:185) ~[na:na]
-	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$12$$anonfun$apply$12.apply(routes_routing.scala:185) ~[na:na]
-	at play.core.Router$HandlerInvoker$$anon$6$$anon$2.invocation(Router.scala:141) ~[play_2.10.jar:2.1.0]
-	at play.core.Router$Routes$$anon$1.invocation(Router.scala:322) ~[play_2.10.jar:2.1.0]
-	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:31) ~[play_2.10.jar:2.1.0]
-	at play.GlobalSettings$1.call(GlobalSettings.java:63) ~[play_2.10.jar:2.1.0]
-	at play.core.j.JavaAction$$anon$2.apply(JavaAction.scala:74) ~[play_2.10.jar:2.1.0]
-	at play.core.j.JavaAction$$anon$2.apply(JavaAction.scala:73) ~[play_2.10.jar:2.1.0]
-	at play.libs.F$Promise$PromiseActor.onReceive(F.java:420) ~[play_2.10.jar:2.1.0]
-	at akka.actor.UntypedActor$$anonfun$receive$1.applyOrElse(UntypedActor.scala:159) ~[akka-actor_2.10.jar:na]
-	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:425) ~[akka-actor_2.10.jar:na]
-	at akka.actor.ActorCell.invoke(ActorCell.scala:386) ~[akka-actor_2.10.jar:na]
-	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:230) ~[akka-actor_2.10.jar:na]
-	at akka.dispatch.Mailbox.run(Mailbox.scala:212) ~[akka-actor_2.10.jar:na]
-	at akka.dispatch.ForkJoinExecutorConfigurator$MailboxExecutionTask.exec(AbstractDispatcher.scala:502) ~[akka-actor_2.10.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:262) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:975) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1478) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:104) ~[scala-library.jar:na]
-
-2013-06-08 12:59:33,977 - [DEBUG] - from application in New I/O  worker #4 
-** onStart **
-
-2013-06-08 12:59:34,010 - [DEBUG] - from application in New I/O  worker #4 
-** Morphia datastore: dev
-
-2013-06-08 12:59:34,011 - [INFO] - from play in New I/O  worker #4 
-Application started (Dev)
-
-2013-06-08 13:05:55,770 - [DEBUG] - from application in New I/O  worker #1 
-** onStart **
-
-2013-06-08 13:05:55,854 - [DEBUG] - from application in New I/O  worker #1 
-** Morphia datastore: dev
-
-2013-06-08 13:05:55,854 - [INFO] - from play in New I/O  worker #1 
-Application started (Dev)
-
-2013-06-08 13:06:12,893 - [DEBUG] - from application in play-akka.actor.default-dispatcher-47 
-Finding user jens.cass@gmail.com
-
-2013-06-08 13:06:12,897 - [DEBUG] - from application in play-akka.actor.default-dispatcher-47 
+2013-06-09 00:34:17,116 - [DEBUG] - from application in play-akka.actor.default-dispatcher-5 
 User found: jens.cass@gmail.com
 
-2013-06-08 13:07:33,299 - [DEBUG] - from application in play-akka.actor.default-dispatcher-53 
-Finding user test@gmail.com
+2013-06-09 00:34:20,604 - [DEBUG] - from application in play-akka.actor.default-dispatcher-9 
+models.FileGroup@2ca7563d
 
-2013-06-08 13:07:49,400 - [DEBUG] - from application in play-akka.actor.default-dispatcher-56 
-in submit
-
-2013-06-08 13:07:49,404 - [DEBUG] - from application in play-akka.actor.default-dispatcher-56 
-in validate
-
-2013-06-08 13:07:49,404 - [DEBUG] - from application in play-akka.actor.default-dispatcher-56 
-email jens.cass@gmail.com
-
-2013-06-08 13:07:49,405 - [DEBUG] - from application in play-akka.actor.default-dispatcher-56 
-password password
-
-2013-06-08 13:07:49,405 - [DEBUG] - from application in play-akka.actor.default-dispatcher-56 
-email: jens.cass@gmail.com
-
-2013-06-08 13:07:49,405 - [DEBUG] - from application in play-akka.actor.default-dispatcher-56 
-password: password
-
-2013-06-08 13:07:49,405 - [DEBUG] - from application in play-akka.actor.default-dispatcher-56 
-datastore not null
-
-2013-06-08 13:07:49,405 - [DEBUG] - from application in play-akka.actor.default-dispatcher-56 
-query created
-
-2013-06-08 13:07:49,407 - [DEBUG] - from application in play-akka.actor.default-dispatcher-56 
-user is retrieved
-
-2013-06-08 13:07:49,407 - [DEBUG] - from application in play-akka.actor.default-dispatcher-56 
-returning null
-
-2013-06-08 13:07:51,500 - [DEBUG] - from application in play-akka.actor.default-dispatcher-57 
+2013-06-09 00:34:20,634 - [DEBUG] - from application in play-akka.actor.default-dispatcher-6 
 User found: jens.cass@gmail.com
 
-2013-06-08 13:07:51,500 - [DEBUG] - from application in play-akka.actor.default-dispatcher-57 
-username CassyJens
-
-2013-06-08 13:07:51,500 - [DEBUG] - from application in play-akka.actor.default-dispatcher-57 
-email jens.cass@gmail.com
-
-2013-06-08 13:07:51,500 - [DEBUG] - from application in play-akka.actor.default-dispatcher-57 
-password password
-
-2013-06-08 13:07:51,500 - [DEBUG] - from application in play-akka.actor.default-dispatcher-57 
-_id 51965f721a88157765f1e01b
-
-2013-06-08 13:10:08,510 - [ERROR] - from application in play-internal-execution-context-1 
-
-
-! @6eh4hnhl7 - Internal server error, for (GET) [/user] ->
-
-play.api.Application$$anon$1: Execution exception[[Network: can't call something : /127.0.0.1:27017/dev]]
-	at play.api.Application$class.handleError(Application.scala:289) ~[play_2.10.jar:2.1.0]
-	at play.api.DefaultApplication.handleError(Application.scala:383) [play_2.10.jar:2.1.0]
-	at play.core.server.netty.PlayDefaultUpstreamHandler$$anon$2$$anonfun$handle$1.apply(PlayDefaultUpstreamHandler.scala:132) [play_2.10.jar:2.1.0]
-	at play.core.server.netty.PlayDefaultUpstreamHandler$$anon$2$$anonfun$handle$1.apply(PlayDefaultUpstreamHandler.scala:128) [play_2.10.jar:2.1.0]
-	at play.api.libs.concurrent.PlayPromise$$anonfun$extend1$1.apply(Promise.scala:113) [play_2.10.jar:2.1.0]
-	at play.api.libs.concurrent.PlayPromise$$anonfun$extend1$1.apply(Promise.scala:113) [play_2.10.jar:2.1.0]
-	at play.api.libs.concurrent.PlayPromise$$anonfun$extend$1$$anonfun$apply$1.apply(Promise.scala:104) [play_2.10.jar:2.1.0]
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) [scala-library.jar:na]
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) [scala-library.jar:na]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895) [na:1.6.0_43]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918) [na:1.6.0_43]
-	at java.lang.Thread.run(Thread.java:680) [na:1.6.0_43]
-com.mongodb.MongoException$Network: can't call something : /127.0.0.1:27017/dev
-	at com.mongodb.DBTCPConnector.innerCall(DBTCPConnector.java:295) ~[mongo-java-driver-2.10.1.jar:na]
-	at com.mongodb.DBTCPConnector.call(DBTCPConnector.java:257) ~[mongo-java-driver-2.10.1.jar:na]
-	at com.mongodb.DBApiLayer$MyCollection.__find(DBApiLayer.java:310) ~[mongo-java-driver-2.10.1.jar:na]
-	at com.mongodb.DBApiLayer$MyCollection.__find(DBApiLayer.java:295) ~[mongo-java-driver-2.10.1.jar:na]
-	at com.mongodb.DBCursor._check(DBCursor.java:368) ~[mongo-java-driver-2.10.1.jar:na]
-	at com.mongodb.DBCursor._hasNext(DBCursor.java:459) ~[mongo-java-driver-2.10.1.jar:na]
-	at com.mongodb.DBCursor.hasNext(DBCursor.java:484) ~[mongo-java-driver-2.10.1.jar:na]
-	at com.google.code.morphia.query.MorphiaIterator.hasNext(MorphiaIterator.java:40) ~[morphia-0.99.jar:na]
-	at com.google.code.morphia.query.QueryImpl.asList(QueryImpl.java:234) ~[morphia-0.99.jar:na]
-	at models.User.findAllUsers(User.java:96) ~[na:na]
-	at controllers.Application.findAllUsers(Application.java:24) ~[na:na]
-	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$12$$anonfun$apply$12.apply(routes_routing.scala:185) ~[na:na]
-	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$12$$anonfun$apply$12.apply(routes_routing.scala:185) ~[na:na]
-	at play.core.Router$HandlerInvoker$$anon$6$$anon$2.invocation(Router.scala:141) ~[play_2.10.jar:2.1.0]
-	at play.core.Router$Routes$$anon$1.invocation(Router.scala:322) ~[play_2.10.jar:2.1.0]
-	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:31) ~[play_2.10.jar:2.1.0]
-	at play.GlobalSettings$1.call(GlobalSettings.java:63) ~[play_2.10.jar:2.1.0]
-	at play.core.j.JavaAction$$anon$2.apply(JavaAction.scala:74) ~[play_2.10.jar:2.1.0]
-	at play.core.j.JavaAction$$anon$2.apply(JavaAction.scala:73) ~[play_2.10.jar:2.1.0]
-	at play.libs.F$Promise$PromiseActor.onReceive(F.java:420) ~[play_2.10.jar:2.1.0]
-	at akka.actor.UntypedActor$$anonfun$receive$1.applyOrElse(UntypedActor.scala:159) ~[akka-actor_2.10.jar:na]
-	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:425) ~[akka-actor_2.10.jar:na]
-	at akka.actor.ActorCell.invoke(ActorCell.scala:386) ~[akka-actor_2.10.jar:na]
-	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:230) ~[akka-actor_2.10.jar:na]
-	at akka.dispatch.Mailbox.run(Mailbox.scala:212) ~[akka-actor_2.10.jar:na]
-	at akka.dispatch.ForkJoinExecutorConfigurator$MailboxExecutionTask.exec(AbstractDispatcher.scala:502) ~[akka-actor_2.10.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:262) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:975) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1478) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:104) ~[scala-library.jar:na]
-Caused by: java.net.SocketException: Connection reset
-	at java.net.SocketInputStream.read(SocketInputStream.java:168) ~[na:1.6.0_43]
-	at java.io.BufferedInputStream.fill(BufferedInputStream.java:218) ~[na:1.6.0_43]
-	at java.io.BufferedInputStream.read1(BufferedInputStream.java:258) ~[na:1.6.0_43]
-	at java.io.BufferedInputStream.read(BufferedInputStream.java:317) ~[na:1.6.0_43]
-	at org.bson.io.Bits.readFully(Bits.java:46) ~[mongo-java-driver-2.10.1.jar:na]
-	at org.bson.io.Bits.readFully(Bits.java:33) ~[mongo-java-driver-2.10.1.jar:na]
-	at org.bson.io.Bits.readFully(Bits.java:28) ~[mongo-java-driver-2.10.1.jar:na]
-	at com.mongodb.Response.<init>(Response.java:40) ~[mongo-java-driver-2.10.1.jar:na]
-	at com.mongodb.DBPort.go(DBPort.java:124) ~[mongo-java-driver-2.10.1.jar:na]
-	at com.mongodb.DBPort.call(DBPort.java:74) ~[mongo-java-driver-2.10.1.jar:na]
-	at com.mongodb.DBTCPConnector.innerCall(DBTCPConnector.java:286) ~[mongo-java-driver-2.10.1.jar:na]
-	... 29 common frames omitted
-
-2013-06-08 13:10:44,647 - [DEBUG] - from application in play-akka.actor.default-dispatcher-73 
-Finding user jens.cass@gmail.com
-
-2013-06-08 13:10:59,662 - [DEBUG] - from application in play-akka.actor.default-dispatcher-81 
-in submit
-
-2013-06-08 13:10:59,665 - [DEBUG] - from application in play-akka.actor.default-dispatcher-81 
+2013-06-09 00:34:25,498 - [DEBUG] - from application in play-akka.actor.default-dispatcher-6 
 in validate
 
-2013-06-08 13:10:59,665 - [DEBUG] - from application in play-akka.actor.default-dispatcher-81 
+2013-06-09 00:34:25,498 - [DEBUG] - from application in play-akka.actor.default-dispatcher-6 
 email jens.cass@gmail.com
 
-2013-06-08 13:10:59,666 - [DEBUG] - from application in play-akka.actor.default-dispatcher-81 
+2013-06-09 00:34:25,498 - [DEBUG] - from application in play-akka.actor.default-dispatcher-6 
 password password
 
-2013-06-08 13:10:59,666 - [DEBUG] - from application in play-akka.actor.default-dispatcher-81 
+2013-06-09 00:34:25,499 - [DEBUG] - from application in play-akka.actor.default-dispatcher-6 
 email: jens.cass@gmail.com
 
-2013-06-08 13:10:59,666 - [DEBUG] - from application in play-akka.actor.default-dispatcher-81 
+2013-06-09 00:34:25,499 - [DEBUG] - from application in play-akka.actor.default-dispatcher-6 
 password: password
 
-2013-06-08 13:10:59,666 - [DEBUG] - from application in play-akka.actor.default-dispatcher-81 
+2013-06-09 00:34:25,499 - [DEBUG] - from application in play-akka.actor.default-dispatcher-6 
 datastore not null
 
-2013-06-08 13:10:59,666 - [DEBUG] - from application in play-akka.actor.default-dispatcher-81 
+2013-06-09 00:34:25,499 - [DEBUG] - from application in play-akka.actor.default-dispatcher-6 
 query created
 
-2013-06-08 13:10:59,669 - [DEBUG] - from application in play-akka.actor.default-dispatcher-81 
+2013-06-09 00:34:25,502 - [DEBUG] - from application in play-akka.actor.default-dispatcher-6 
 user is retrieved
 
-2013-06-08 13:10:59,670 - [DEBUG] - from application in play-akka.actor.default-dispatcher-81 
+2013-06-09 00:34:25,503 - [DEBUG] - from application in play-akka.actor.default-dispatcher-6 
 returning null
+
+2013-06-09 00:34:25,506 - [DEBUG] - from application in play-akka.actor.default-dispatcher-6 
+User found: jens.cass@gmail.com
+
+2013-06-09 00:34:26,097 - [DEBUG] - from application in play-akka.actor.default-dispatcher-4 
+User found: jens.cass@gmail.com
+
+2013-06-09 00:34:26,120 - [DEBUG] - from application in play-akka.actor.default-dispatcher-8 
+models.FileGroup@55aef45
+
+2013-06-09 00:34:28,084 - [DEBUG] - from application in play-akka.actor.default-dispatcher-5 
+User found: jens.cass@gmail.com
+
+2013-06-09 00:34:28,087 - [DEBUG] - from application in play-akka.actor.default-dispatcher-5 
+Number of file groups in working group: 1
+
+2013-06-09 00:34:28,087 - [DEBUG] - from application in play-akka.actor.default-dispatcher-5 
+session id 51b3fba71a88c7b3667eb185
+
+2013-06-09 00:34:28,087 - [DEBUG] - from application in play-akka.actor.default-dispatcher-5 
+file group id 51b3fba71a88c7b3667eb185
+
+2013-06-09 00:34:28,479 - [DEBUG] - from application in play-akka.actor.default-dispatcher-6 
+models.FileGroup@393cd5b5
+
+2013-06-09 00:34:28,508 - [DEBUG] - from application in play-akka.actor.default-dispatcher-8 
+User found: jens.cass@gmail.com
+
+2013-06-09 00:37:46,285 - [DEBUG] - from application in New I/O  worker #2 
+** onStart **
+
+2013-06-09 00:37:46,327 - [DEBUG] - from application in New I/O  worker #2 
+** Morphia datastore: dev
+
+2013-06-09 00:37:46,328 - [INFO] - from play in New I/O  worker #2 
+Application started (Dev)
+
+2013-06-09 00:37:46,749 - [DEBUG] - from application in play-akka.actor.default-dispatcher-15 
+User found: jens.cass@gmail.com
+
+2013-06-09 00:37:46,858 - [DEBUG] - from application in play-akka.actor.default-dispatcher-15 
+Number of file groups in working group: 1
+
+2013-06-09 00:37:46,859 - [DEBUG] - from application in play-akka.actor.default-dispatcher-15 
+session id 51b3fba71a88c7b3667eb185
+
+2013-06-09 00:37:46,862 - [DEBUG] - from application in play-akka.actor.default-dispatcher-15 
+file group id 51b3fba71a88c7b3667eb185
+
+2013-06-09 00:37:46,873 - [DEBUG] - from application in play-akka.actor.default-dispatcher-15 
+Number of files in file group: 1
+
+2013-06-09 00:37:46,873 - [DEBUG] - from application in play-akka.actor.default-dispatcher-15 
+File: models.EcoFile@1d4651f2
+
+2013-06-09 00:37:47,162 - [DEBUG] - from application in play-akka.actor.default-dispatcher-11 
+models.FileGroup@2bb4d74
+
+2013-06-09 00:37:51,744 - [DEBUG] - from application in play-akka.actor.default-dispatcher-11 
+in validate
+
+2013-06-09 00:37:51,745 - [DEBUG] - from application in play-akka.actor.default-dispatcher-11 
+email jens.cass@gmail.com
+
+2013-06-09 00:37:51,748 - [DEBUG] - from application in play-akka.actor.default-dispatcher-11 
+password password
+
+2013-06-09 00:37:51,749 - [DEBUG] - from application in play-akka.actor.default-dispatcher-11 
+email: jens.cass@gmail.com
+
+2013-06-09 00:37:51,749 - [DEBUG] - from application in play-akka.actor.default-dispatcher-11 
+password: password
+
+2013-06-09 00:37:51,749 - [DEBUG] - from application in play-akka.actor.default-dispatcher-11 
+datastore not null
+
+2013-06-09 00:37:51,763 - [DEBUG] - from application in play-akka.actor.default-dispatcher-11 
+query created
+
+2013-06-09 00:37:51,766 - [DEBUG] - from application in play-akka.actor.default-dispatcher-11 
+user is retrieved
+
+2013-06-09 00:37:51,766 - [DEBUG] - from application in play-akka.actor.default-dispatcher-11 
+returning null
+
+2013-06-09 00:37:51,771 - [DEBUG] - from application in play-akka.actor.default-dispatcher-11 
+User found: jens.cass@gmail.com
+
+2013-06-09 00:37:52,349 - [DEBUG] - from application in play-akka.actor.default-dispatcher-14 
+User found: jens.cass@gmail.com
+
+2013-06-09 00:37:52,435 - [DEBUG] - from application in play-akka.actor.default-dispatcher-11 
+models.FileGroup@57f9cc39
+
+2013-06-09 00:37:54,710 - [DEBUG] - from application in play-akka.actor.default-dispatcher-12 
+User found: jens.cass@gmail.com
+
+2013-06-09 00:37:54,712 - [DEBUG] - from application in play-akka.actor.default-dispatcher-12 
+Number of file groups in working group: 1
+
+2013-06-09 00:37:54,713 - [DEBUG] - from application in play-akka.actor.default-dispatcher-12 
+session id 51b3fba71a88c7b3667eb185
+
+2013-06-09 00:37:54,713 - [DEBUG] - from application in play-akka.actor.default-dispatcher-12 
+file group id 51b3fba71a88c7b3667eb185
+
+2013-06-09 00:37:54,719 - [DEBUG] - from application in play-akka.actor.default-dispatcher-12 
+Number of files in file group: 1
+
+2013-06-09 00:37:54,719 - [DEBUG] - from application in play-akka.actor.default-dispatcher-12 
+File: models.EcoFile@22bce28a
+
+2013-06-09 00:37:55,075 - [DEBUG] - from application in play-akka.actor.default-dispatcher-11 
+models.FileGroup@3f5c0d33
+
+2013-06-09 00:37:55,232 - [DEBUG] - from application in play-akka.actor.default-dispatcher-13 
+User found: jens.cass@gmail.com
 

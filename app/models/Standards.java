@@ -8,7 +8,7 @@ import play.mvc.*;
 import play.mvc.Http.*;
 
 @Embedded
-public class Standards extends Security.Authenticator {
+public class Standards {
 	
     public ObjectId createdBy;
     public String createdDate = new DT().getDate();
@@ -33,6 +33,8 @@ public class Standards extends Security.Authenticator {
 
     	}
     }
+
+    public Standards(){}
 
     //http://code.google.com/p/morphia/wiki/EmbeddedAnnotation
 }

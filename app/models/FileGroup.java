@@ -38,7 +38,7 @@ import controllers.MorphiaObject;
 
     // File group
 	public List<ObjectId> fileGroups = new ArrayList<ObjectId>();
-	public List<ObjectId> fileIds = new ArrayList<ObjectId>();
+	public List<ObjectId> files = new ArrayList<ObjectId>();
     
     // Metadata
     public List<Object> metadata;
@@ -83,11 +83,11 @@ import controllers.MorphiaObject;
 		Datastore ds = MorphiaObject.datastore;
 		
         try {
-            Logger.debug("about to update this biz: " + this.fileIds);
+            Logger.debug("about to update this biz: " + this.files);
 
-			this.fileIds.add(fileId);
+			this.files.add(fileId);
             updateQuery = MorphiaObject.datastore.createQuery(FileGroup.class).field("_id").equal(this.id);
-			ds.update(updateQuery, ds.createUpdateOperations(FileGroup.class).set("fileIds", this.fileIds)); 		
+			ds.update(updateQuery, ds.createUpdateOperations(FileGroup.class).set("fileIds", this.files)); 		
 		
         }
 		catch(Exception e) {

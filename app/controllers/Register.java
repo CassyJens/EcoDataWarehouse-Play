@@ -76,8 +76,9 @@ public class Register extends Controller {
             return badRequest(form.render(filledForm));
         } else {
             User user = filledForm.get(); /* create an object from a form */
-            user.save();            
-            return ok(summary.render(user));
+            User svUser = new User(user.username, user.email, user.password); /* recreate to get save group info */
+            svUser.save();            
+            return ok(summary.render(svUser));
         }
     }
 

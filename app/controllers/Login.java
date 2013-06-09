@@ -9,7 +9,10 @@ import views.html.login.*;
 import models.*;
 
 import javax.validation.*;
+import java.util.*;
 import play.data.validation.Constraints.*;
+
+import org.bson.types.ObjectId;
 
 /**
  * Login controller
@@ -55,16 +58,48 @@ public class Login extends Controller {
      * Handle login form submission.
      */
     public static Result submit() {
-        Logger.debug("in submit");
+
         Form<LoginForm> loginForm = form(LoginForm.class).bindFromRequest();
-        
+        List<ObjectId> wgs = new ArrayList<ObjectId>();
+        List<ObjectId> fgs = new ArrayList<ObjectId>();
+        String email = "";
+        ObjectId id;
+
         if(loginForm.hasErrors()) {
+            
             return badRequest(form.render(loginForm));
+        
         } else {
-            session("email", loginForm.get().email);
+            
+            try {
+            
+                email = loginForm.get().email;
+                wgs = new User().findByEmail(email).workingGroups;
+
+                if(wgs.size() > 0) {
+                    
+                    id = wgs.get(0);
+                    session("wgid", id.toString());
+                    fgs = new WorkingGroup().findById(id).fileGroups;
+            
+                    if(fgs.size() > 0) {
+
+                        id = fgs.get(0);
+                        session("fgid", id.toString());
+                    
+                    }
+                    //@session.get("hello")
+                }
+            
+            }
+            catch(Exception e) { }
+
+            session("email", email);
+
             return redirect(
                 routes.FileManagement.filemanagement()
             );
+        
         }
     } 
 

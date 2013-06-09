@@ -1,16 +1,23 @@
 @(title: String = "Private Nav")(content: Html)
 
+<!-- nav -->
 <div class="navbar navbar-static-top">
   <div class="navbar-inner">
     <a class="brand" href="#">UW-La Crosse Ecological Data Warehouse</a>
     <ul class="nav">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Explore</a></li>    	
-      <li><a href="/filemanagement/upload">Upload</a></li>
-      <li><a href="/filemanagement/download">Download</a></li>
-      <li><a href="/register">Register</a></li>
+      <li><a href="/wgmanagement">Working Groups</a></li>
+      <li><a href="/filemanagement">Files</a></li>
+      <li><a href="/register">Users</a></li>
+      <!-- context switch -->
+      <li class="dropdown">
+        <a id="drop1" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">Context<b class="caret"></b></a>
+        <ul class="dropdown-menu" data-bind="foreach: $root.listWorkingGroups">
+          <li> <a href="#" data-bind="text: name"></a></li>
+        </ul>
+      </li>
       <li><a href="/logout">Sign Out</a></li>
     </ul>
   </div>
 </div>
+
 @content

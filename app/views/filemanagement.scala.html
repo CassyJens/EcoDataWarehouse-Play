@@ -1,20 +1,22 @@
-@(message: String)
-
+@(message: String)(content: Html)
 
 @main("UWL File Management - Private") {
     
     @navprivate("Private Nav") {
-		<div class="container">
 
-	 	   	<h3> TODO </h3>
-	 	   	<ul> 
-	 	   		<li>Pass user selection to upload and download</li>
-	 	   		<li>Offer privacy options to user on file upload</li>
-	 	   		<li>Create sortable table for viewing available files</li>
-	 	   		<li>Link locational information with file</li>
-	 	   		<li>Change of username and password </li>
-	 	   	</ul>
+		<div class="row">
 
+	    	<div class="span4">
+	    		<ul class="nav nav-list">
+	  				<li class="nav-header">File Management</li>
+		        	<li class="active"><a href="/filemanagement/upload">Upload</a></li>
+	    	  		<li><a href="/filemanagement/download">Download</a></li>
+				</ul>
+			</div>
+
+			<div class="span8">
+				@content
+		 	</div>
  		</div>
 	}
 }

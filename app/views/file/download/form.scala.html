@@ -4,32 +4,30 @@
 @import org.bson.types.ObjectId
 @import com.mongodb.Mongo
 
-@main("File download Form") {
-    @navprivate("Private Nav") {
-    	<div class="container">
-    		<h3> Download Files </h3>
-			
-			@helper.form(action = routes.FileManagement.blankDownload()) {
-	    		<div class="container">
-		    		<legend class="form-signing-heading"> Narrow your search. </legend>
-		    		<p data-bind="text: viewModel.test"> </p> 
-		    		<select data-bind="options: $root.listUsers, optionsText: 'name', optionsCaption: 'Choose from researchers...'" multi="true" >
-		    		</select>
-		    		<br />
-		    		<select data-bind="options: $root.listFileGroups, optionsText: 'name', optionsCaption: 'Choose from file groups...'" multi="true" >
-		    		</select>
-		    		<br />
-		    		<input type="submit" class="btn" value="Go"/>
-		    	</div>
-		    	<div class="container">
-					<legend class="form-signing-heading"> Click on the file to download. </legend>
-					<ul> 
-						@files.map { files =>
-						  <li><a href="/filemanagement/download/@files.id">@files.name</a></li>
-						} 
-					</ul>
-				</div>
-			}
-		</div>
+	
+@helper.form(action = routes.FileManagement.blankDownload()) {
+
+	<div class="container">
+		
+		<!-- narrow-search -->
+		<legend class="form-signing-heading"> Narrow your search. </legend>
+		<p data-bind="text: viewModel.test"> </p> 
+
+		<!-- filegroups-dropdown -->
+		<select data-bind="options: $root.listFileGroups, optionsText: 'name', optionsCaption: 'Select file group...'" multi="true" >
+		</select>
+
+	</div>
+
+
+	<div class="container">
+
+		<!-- Download Table -->
+		<legend class="form-signing-heading"> Click on the file to download. </legend>
+		<ul> 
+			@files.map { files =>
+			  <li><a href="/filemanagement/download/@files.id">@files.name</a></li>
+			} 
+		</ul>
+	</div>
 	}
-}

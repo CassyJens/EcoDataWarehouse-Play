@@ -27,7 +27,7 @@ import controllers.MorphiaObject;
 
     @Required public String description;
 
-    public List<ObjectId> fileGroups;
+    public List<ObjectId> fileGroups = new ArrayList<ObjectId>();
 
     @Required public Standards standards;
 
@@ -45,6 +45,12 @@ import controllers.MorphiaObject;
         this.name = name;
     	this.description = description;
         this.standards = new Standards(email);
+        
+        /* Create the default file group to store with the working group */
+        FileGroup fg = new FileGroup("Default", "Default file group for " + name, email);
+        ObjectId id = fg.save();
+        fileGroups.add(id);
+
     }
 
     /**

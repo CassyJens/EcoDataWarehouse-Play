@@ -32,9 +32,11 @@ import org.bson.types.ObjectId;
     @Required 
     @MinLength(value = 6) 
     public String password;
+
+    public List<ObjectId> workingGroups = new ArrayList<ObjectId>(); 
     
-    public List<ObjectId> workingGroups; 
     @Embedded public Standards standards;
+    
     @Id public ObjectId id;
 
     public User(){}
@@ -48,7 +50,11 @@ import org.bson.types.ObjectId;
 		this.email = email;
 		this.password = password;
 	    this.standards = new Standards(email);
-        this.workingGroups.add(new WorkingGroup(email, "User's Default WorkingGroup", email).save());
+
+        WorkingGroup wg = new WorkingGroup(email, "User's Default WorkingGroup", email);
+        ObjectId wgID = wg.save();
+        Logger.debug("WorkingGroup created: " + wg.name);
+        this.workingGroups.add(wgID);
     }
 
     /**
@@ -120,4 +126,20 @@ import org.bson.types.ObjectId;
         else throw new Exception("User " + email + " does not exist");
     }
 
+    /** 
+     * Returns the list of working group objects
+     * which belong to the user.
+     */
+    public List<WorkingGroup> getWorkingGroups() {
+        List<WorkingGroup> wgs = new ArrayList<WorkingGroup>();
+        WorkingGroup wg;
+        for(ObjectId id : this.workingGroups) {
+            try {
+                wg = new WorkingGroup().findById(id);
+                wgs.add(wg);
+            }
+            catch(Exception e) { }
+        }
+        return wgs;
+    }
 }
