@@ -1,17 +1,11 @@
 # UW La Crosse Ecological Data Warehouse
 Developed by Cassy Jens
+This project was used to learn the Play Framework and is no longer maintained. See EcoDataWarehouse-Node repo for active development.
 
 ## Build
 
     cd <project dir>
     play run
-
-
-
-### Standards
-1. Every model has the following methods
-	- ObjectId save()
-
 
 ### TODO
 1. Change of email
